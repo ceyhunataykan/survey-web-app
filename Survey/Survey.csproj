@@ -106,6 +106,19 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Admin\Anket\Ekle.aspx" />
+    <Content Include="Admin\Anket\Guncelle.aspx" />
+    <Content Include="Admin\Anket\Liste.aspx" />
+    <Content Include="Admin\Anket\Soru\Ekle.aspx" />
+    <Content Include="Admin\Anket\Soru\Guncelle.aspx" />
+    <Content Include="Admin\Anket\Soru\Liste.aspx" />
+    <Content Include="Admin\Dashboard.aspx" />
+    <Content Include="Admin\Hesap\Parola.aspx" />
+    <Content Include="Admin\Hesap\Profil.aspx" />
+    <Content Include="Admin\Kullanici\Ekle.aspx" />
+    <Content Include="Admin\Kullanici\Guncelle.aspx" />
+    <Content Include="Admin\Kullanici\Liste.aspx" />
+    <Content Include="Admin\Kullanici\Rol\Yonet.aspx" />
     <Content Include="Content\anketp-logo-big.png" />
     <Content Include="Content\anketp-logo.jpg" />
     <Content Include="Content\back.jpg" />
@@ -128,6 +141,7 @@
     </Content>
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <Content Include="Admin\Admin.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -159,10 +173,107 @@
     <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
     <Content Include="Scripts\morris.js" />
     <Content Include="Scripts\sorular.js" />
-    <Content Include="Scripts\tabs.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Anket\Ekle.aspx.cs">
+      <DependentUpon>Ekle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Anket\Ekle.aspx.designer.cs">
+      <DependentUpon>Ekle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Anket\Guncelle.aspx.cs">
+      <DependentUpon>Guncelle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Anket\Guncelle.aspx.designer.cs">
+      <DependentUpon>Guncelle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Anket\Liste.aspx.cs">
+      <DependentUpon>Liste.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Anket\Liste.aspx.designer.cs">
+      <DependentUpon>Liste.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Anket\Soru\Ekle.aspx.cs">
+      <DependentUpon>Ekle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Anket\Soru\Ekle.aspx.designer.cs">
+      <DependentUpon>Ekle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Anket\Soru\Guncelle.aspx.cs">
+      <DependentUpon>Guncelle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Anket\Soru\Guncelle.aspx.designer.cs">
+      <DependentUpon>Guncelle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Anket\Soru\Liste.aspx.cs">
+      <DependentUpon>Liste.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Anket\Soru\Liste.aspx.designer.cs">
+      <DependentUpon>Liste.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Hesap\Parola.aspx.cs">
+      <DependentUpon>Parola.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Hesap\Parola.aspx.designer.cs">
+      <DependentUpon>Parola.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Hesap\Profil.aspx.cs">
+      <DependentUpon>Profil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Hesap\Profil.aspx.designer.cs">
+      <DependentUpon>Profil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Kullanici\Ekle.aspx.cs">
+      <DependentUpon>Ekle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Kullanici\Ekle.aspx.designer.cs">
+      <DependentUpon>Ekle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Kullanici\Guncelle.aspx.cs">
+      <DependentUpon>Guncelle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Kullanici\Guncelle.aspx.designer.cs">
+      <DependentUpon>Guncelle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Kullanici\Liste.aspx.cs">
+      <DependentUpon>Liste.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Kullanici\Liste.aspx.designer.cs">
+      <DependentUpon>Liste.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Kullanici\Rol\Yonet.aspx.cs">
+      <DependentUpon>Yonet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Kullanici\Rol\Yonet.aspx.designer.cs">
+      <DependentUpon>Yonet.aspx</DependentUpon>
+    </Compile>
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -185,7 +296,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Panel\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

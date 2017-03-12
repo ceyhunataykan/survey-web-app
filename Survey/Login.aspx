@@ -1,17 +1,16 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Survey.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Survey.Login" MaintainScrollPositionOnPostback="true" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>AnketP Kullanıcı Portalı Girişi</title>
+    <title>Anket Portalı Kullanıcı Girişi</title>
     <link href="Content/reset.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/login.css" rel="stylesheet" />
     <script src="scripts/jquery-3.1.1.min.js"></script>
     <script src="scripts/bootstrap.min.js"></script>
-    <script src="scripts/tabs.js"></script>
     <script>
         $(function () {
             $("#btnGirisTab").click(function () {
@@ -28,19 +27,19 @@
                 $("#signupbox").show();
                 return false;
             });
-            $("#btnGir").click(function() {
+            $("#btnGir").click(function () {
                 var kadi = $("#txtKullanici").val();
                 var parola = $("#txtParola").val();
                 if (kadi == "" || parola == "") {
                     $("#sonucGiris").html("Boş Bırakmayınız");
                     $("#sonucGiris").removeClass();
                     $("#sonucGiris").addClass("alert alert-danger");
-                    return false; 
+                    return false;
                 };
                 return false;
             });
 
-            $("#btnKayit").click(function() {
+            $("#btnKayit").click(function () {
                 var kadi = $("#txtKullaniciAdi").val();
                 var parola = $("#txtParolaKayit").val();
                 var parolaTek = $("#txtParolaKayitTekrar").val();
@@ -51,9 +50,6 @@
                     $("#sonucKayit").addClass("alert alert-danger");
                     return false;
                 };
-                $("#sonucKayit").html("Kayıt Başarılı");
-                $("#sonucKayit").removeClass();
-                $("#sonucKayit").addClass("alert alert-success");
                 return false;
             });
         });
