@@ -12,7 +12,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
         <div class="col-sm-12">
-            <button runat="server" id="btnAnketOlustur" class="btn btn-primary btn-block" style="height: 50px; font-size: 16px; font-weight: 500; font-family: 'Roboto', sans-serif;"><span class="glyphicon glyphicon-check"></span>Yeni Anket Oluştur</button>
+            <a href="Anket/Ekle.aspx"  id="btnAnketEkle" class="btn btn-primary btn-block" style="height: 50px; font-size: 16px; font-weight: 500; font-family: 'Roboto', sans-serif;"><span class="glyphicon glyphicon-check"></span>&nbsp;&nbsp;Yeni Anket Oluştur</a>
         </div>
     </div>
 

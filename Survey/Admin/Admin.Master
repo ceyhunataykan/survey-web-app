@@ -6,11 +6,11 @@
 <head runat="server">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kullanıcı Paneli</title>
-    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
-    <link href="../font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="../Content/usermaster.css" rel="stylesheet" />
-    <script src="../scripts/jquery-1.9.1.js"></script>
-    <script src="../scripts/bootstrap.min.js"></script>
+    <link href="/Content/boostwatch.min.css" rel="stylesheet" />
+    <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Content/usermaster.css" rel="stylesheet" />
+    <script src="/scripts/jquery-3.1.1.js"></script>
+    <script src="/scripts/bootstrap.min.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -28,10 +28,10 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav" style="margin-left: 30px; margin-top:5px">
-                        <li><a href="kullanicipaneli.aspx">Dashboard</a></li>
-                        <li><a> | </a></li>
-                        <li><a href="anketler.aspx">Anketler</a></li>
+                        <li><a href="Dashboard.aspx">Dashboard</a></li>
+                        <li><a href="Anket/Liste.aspx">Anketler</a></li>
                         <li><a href="uyeler.aspx">Üyeler</a></li>
+                        <li><a href="uyeler.aspx">Raporlar</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
@@ -39,7 +39,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="profil.aspx">Profil</a></li>
                                 <li><a href="parola.aspx">Parola Değiştir</a></li>
-                                <li><a runat="server" id="btnKapat" href="#">Çıkış</a></li>
+                                <li><a runat="server" id="btnKapat" href="#">Güvenli Çıkış</a></li>
                             </ul>
                         </li>
                     </ul>

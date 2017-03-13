@@ -22,24 +22,6 @@ namespace Survey.Admin.Anket {
         protected global::System.Web.UI.HtmlControls.HtmlInputText txtAnketAdi;
         
         /// <summary>
-        /// txtAcilisMesaji control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtAcilisMesaji;
-        
-        /// <summary>
-        /// txtKapanışMesaji control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlTextArea txtKapanışMesaji;
-        
-        /// <summary>
         /// txtBaslangicTarihi control.
         /// </summary>
         /// <remarks>

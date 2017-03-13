@@ -15,18 +15,6 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-4 control-label">Açılış Mesajı</label>
-                            <div class="col-sm-6">
-                                <textarea runat="server" id="txtAcilisMesaji" name="txtAcilisMesaji" class="form-control" type="text" rows="4" maxlength="100" />
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-4 control-label">Kapanış Mesajı</label>
-                            <div class="col-sm-6">
-                                <textarea runat="server" id="txtKapanışMesaji" name="txtKapanışMesaji" class="form-control" type="text" rows="4" maxlength="100" />
-                            </div>
-                        </div>
-                        <div class="form-group">
                             <label class="col-sm-4 control-label">Başlangıç Tarihi</label>
                             <div class="col-sm-6">
                                 <input runat="server" id="txtBaslangicTarihi" name="txtBaslangicTarihi" class="form-control" type="date" />
@@ -38,7 +26,7 @@
                                 <input runat="server" id="txtBitisTarihi" name="txtBitisTarihi" class="form-control" type="date" />
                             </div>
                         </div>
-                        <div class="form-group">
+                        <%--<div class="form-group">
                             <label class="col-sm-4 control-label">Anket Kısıtlaması</label>
                             <div class="col-sm-6">
                                 <select id="AnketKisitlama" name="AnketKisitlama" class="form-control">
@@ -46,7 +34,7 @@
                                     <option value="2">Sadece Kayıtlı Kullanıcılar</option>
                                 </select>
                             </div>
-                        </div>
+                        </div>--%>
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Durum</label>
                             <div class="col-md-6">

@@ -10,7 +10,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
         <div class="col-sm-12">
-            <button runat="server" id="btnAnketOlustur" class="btn btn-primary btn-block" style="height: 50px; font-size: 16px; font-weight: 500; font-family: 'Roboto', sans-serif;"><span class="glyphicon glyphicon-check"></span>Yeni Anket Oluştur</button>
+            <button runat="server" id="btnAnketOlustur" class="btn btn-primary btn-block" style="height: 50px; font-size: 16px; font-weight: 500; font-family: 'Roboto', sans-serif;"><span class="glyphicon glyphicon-check"></span>&nbsp;&nbsp;Yeni Anket Oluştur</button>
         </div>
     </div>
     <div class="row" style="margin-top: 25px">
@@ -20,122 +20,44 @@
                     <h3>Anket Listesi</h3>
                 </div>
                 <div class="panel-body">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th>Anket Adı</th>
-                                <th>Başlangıç Tarihi</th>
-                                <th>Bitiş Tarihi</th>
-                                <th>Etkinlik</th>
-                                <th>Durum</th>
-                                <th>İşlemler</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><a href="sorular.aspx">Anket 1</a></td>
-                                <td>21.10.2016</td>
-                                <td>21.11.2016</td>
-                                <td>123</td>
-                                <td>
-                                    <div class="btn btn-xs btn-success">Aktif</div>
-                                </td>
-                                <td>
-                                    <a href="soruekle.aspx" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Soru Ekle"><span class="glyphicon glyphicon-plus"></span></a>
-                                    <a href="#" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Üyeleri Gör"><span class="glyphicon glyphicon-user"></span></a>
-                                    <a href="#" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Anketi Gör"><span class="glyphicon glyphicon-globe"></span></a>
-                                    <a href="#" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Rapor"><span class="glyphicon glyphicon-signal"></span></a>
-                                    <a href="#" class="btn btn-xs btn-info" data-toggle="tooltip" data-placement="top" title="Düzenle"><span class="glyphicon glyphicon-cog"></span></a>
-                                    <a href="#" class="btn btn-xs btn-danger" data-toggle="tooltip" data-placement="top" title="Sil"><span class="glyphicon glyphicon-remove"></span></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Anket 2</td>
-                                <td>22.10.2016</td>
-                                <td>22.11.2016</td>
-                                <td>45</td>
-                                <td>
-                                    <div class="btn btn-xs btn-success">Aktif</div>
-                                </td>
-                                <td>
-                                    <a href="soruekle.aspx" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Soru Ekle"><span class="glyphicon glyphicon-plus"></span></a>
-                                    <a href="#" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Üyeleri Gör"><span class="glyphicon glyphicon-user"></span></a>
-                                    <a href="#" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Anketi Gör"><span class="glyphicon glyphicon-globe"></span></a>
-                                    <a href="#" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Rapor"><span class="glyphicon glyphicon-signal"></span></a>
-                                    <a href="#" class="btn btn-xs btn-info" data-toggle="tooltip" data-placement="top" title="Düzenle"><span class="glyphicon glyphicon-cog"></span></a>
-                                    <a href="#" class="btn btn-xs btn-danger" data-toggle="tooltip" data-placement="top" title="Sil"><span class="glyphicon glyphicon-remove"></span></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Anket 3</td>
-                                <td>27.10.2016</td>
-                                <td>29.10.2016</td>
-                                <td>12</td>
-                                <td>
-                                    <div class="btn btn-xs btn-danger">Pasif</div>
-                                </td>
-                                <td>
-                                    <a href="soruekle.aspx" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Soru Ekle"><span class="glyphicon glyphicon-plus"></span></a>
-                                    <a href="#" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Üyeleri Gör"><span class="glyphicon glyphicon-user"></span></a>
-                                    <a href="#" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Anketi Gör"><span class="glyphicon glyphicon-globe"></span></a>
-                                    <a href="#" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Rapor"><span class="glyphicon glyphicon-signal"></span></a>
-                                    <a href="#" class="btn btn-xs btn-info" data-toggle="tooltip" data-placement="top" title="Düzenle"><span class="glyphicon glyphicon-cog"></span></a>
-                                    <a href="#" class="btn btn-xs btn-danger" data-toggle="tooltip" data-placement="top" title="Sil"><span class="glyphicon glyphicon-remove"></span></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Anket 4</td>
-                                <td>11.11.2016</td>
-                                <td>21.11.2016</td>
-                                <td>42</td>
-                                <td>
-                                    <div class="btn btn-xs btn-success">Aktif</div>
-                                </td>
-                                <td>
-                                    <a href="soruekle.aspx" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Soru Ekle"><span class="glyphicon glyphicon-plus"></span></a>
-                                    <a href="#" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Üyeleri Gör"><span class="glyphicon glyphicon-user"></span></a>
-                                    <a href="#" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Anketi Gör"><span class="glyphicon glyphicon-globe"></span></a>
-                                    <a href="#" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Rapor"><span class="glyphicon glyphicon-signal"></span></a>
-                                    <a href="#" class="btn btn-xs btn-info" data-toggle="tooltip" data-placement="top" title="Düzenle"><span class="glyphicon glyphicon-cog"></span></a>
-                                    <a href="#" class="btn btn-xs btn-danger" data-toggle="tooltip" data-placement="top" title="Sil"><span class="glyphicon glyphicon-remove"></span></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Anket 5</td>
-                                <td>12.11.2016</td>
-                                <td>25.11.2016</td>
-                                <td>26</td>
-                                <td>
-                                    <div class="btn btn-xs btn-success">Aktif</div>
-                                </td>
-                                <td>
-                                    <a href="soruekle.aspx" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Soru Ekle"><span class="glyphicon glyphicon-plus"></span></a>
-                                    <a href="#" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Üyeleri Gör"><span class="glyphicon glyphicon-user"></span></a>
-                                    <a href="#" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Anketi Gör"><span class="glyphicon glyphicon-globe"></span></a>
-                                    <a href="#" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Rapor"><span class="glyphicon glyphicon-signal"></span></a>
-                                    <a href="#" class="btn btn-xs btn-info" data-toggle="tooltip" data-placement="top" title="Düzenle"><span class="glyphicon glyphicon-cog"></span></a>
-                                    <a href="#" class="btn btn-xs btn-danger" data-toggle="tooltip" data-placement="top" title="Sil"><span class="glyphicon glyphicon-remove"></span></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>Anket 6</td>
-                                <td>21.11.2016</td>
-                                <td>21.12.2016</td>
-                                <td>19</td>
-                                <td>
-                                    <div class="btn btn-xs btn-danger">Pasif</div>
-                                </td>
-                                <td>
-                                    <a href="soruekle.aspx" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Soru Ekle"><span class="glyphicon glyphicon-plus"></span></a>
-                                    <a href="#" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Üyeleri Gör"><span class="glyphicon glyphicon-user"></span></a>
-                                    <a href="#" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Anketi Gör"><span class="glyphicon glyphicon-globe"></span></a>
-                                    <a href="#" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Rapor"><span class="glyphicon glyphicon-signal"></span></a>
-                                    <a href="#" class="btn btn-xs btn-info" data-toggle="tooltip" data-placement="top" title="Düzenle"><span class="glyphicon glyphicon-cog"></span></a>
-                                    <a href="#" class="btn btn-xs btn-danger" data-toggle="tooltip" data-placement="top" title="Sil"><span class="glyphicon glyphicon-remove"></span></a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <asp:ListView runat="server" ID="lvAnketListe">
+                        <LayoutTemplate>
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Anket Adı</th>
+                                            <th>Başlangıç Tarihi</th>
+                                            <th>Bitiş Tarihi</th>
+                                            <th>Katılım</th>
+                                            <th>Durum</th>
+                                            <th>İşlemler</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Anket 1</td>
+                                            <td>21.11.2016</td>
+                                            <td>21.12.2016</td>
+                                            <td>19</td>
+                                            <td>
+                                                <div class="btn btn-xs btn-danger">Pasif</div>
+                                            </td>
+                                            <td>
+                                                <a href="soruekle.aspx" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Soru Ekle"><span class="glyphicon glyphicon-plus"></span></a>
+                                                <a href="#" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Üyeleri Gör"><span class="glyphicon glyphicon-user"></span></a>
+                                                <a href="#" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Anketi Gör"><span class="glyphicon glyphicon-globe"></span></a>
+                                                <a href="#" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Rapor"><span class="glyphicon glyphicon-signal"></span></a>
+                                                <a href="#" class="btn btn-xs btn-info" data-toggle="tooltip" data-placement="top" title="Düzenle"><span class="glyphicon glyphicon-cog"></span></a>
+                                                <a href="#" class="btn btn-xs btn-danger" data-toggle="tooltip" data-placement="top" title="Sil"><span class="glyphicon glyphicon-remove"></span></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </LayoutTemplate>
+                        <ItemTemplate></ItemTemplate>
+                    </asp:ListView>
                 </div>
                 <div class="panel-footer text-center" style="color: #444444">
                     <nav aria-label="Page navigation">
