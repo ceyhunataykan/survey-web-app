@@ -9,8 +9,6 @@
     <link href="/Content/boostwatch.min.css" rel="stylesheet" />
     <link href="/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <link href="/Content/usermaster.css" rel="stylesheet" />
-    <script src="/scripts/jquery-3.1.1.js"></script>
-    <script src="/scripts/bootstrap.min.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -28,8 +26,8 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav" style="margin-left: 30px; margin-top:5px">
-                        <li><a href="Dashboard.aspx">Dashboard</a></li>
-                        <li><a href="Anket/Liste.aspx">Anketler</a></li>
+                        <li><a href="/Admin/Dashboard.aspx">Dashboard</a></li>
+                        <li><a href="/Admin/Anket/Liste.aspx">Anketler</a></li>
                         <li><a href="uyeler.aspx">Üyeler</a></li>
                         <li><a href="uyeler.aspx">Raporlar</a></li>
                     </ul>
@@ -47,10 +45,12 @@
             </div>
         </nav>
         <div class="container">
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-        
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">      
         </asp:ContentPlaceHolder>
     </div>
     </form>
+    <script src="/scripts/jquery-3.1.1.js"></script>
+    <script src="/scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/morris.js"></script>
 </body>
 </html>

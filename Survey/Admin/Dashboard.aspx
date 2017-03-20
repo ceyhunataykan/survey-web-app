@@ -1,8 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" Inherits="Survey.Admin.Dashboard" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="../Content/morris.css" rel="stylesheet" />
-    <script src="../Scripts/morris.js"></script>
+    <link href="/Content/morris.css" rel="stylesheet" /> 
     <script>
         $(document).ready(function () {
             $('[data-toggle="tooltip"]').tooltip();

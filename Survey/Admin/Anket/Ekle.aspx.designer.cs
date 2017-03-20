@@ -13,48 +13,66 @@ namespace Survey.Admin.Anket {
     public partial class Ekle {
         
         /// <summary>
-        /// txtAnketAdi control.
+        /// txtAnketAd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtAnketAdi;
+        protected global::System.Web.UI.WebControls.TextBox txtAnketAd;
         
         /// <summary>
-        /// txtBaslangicTarihi control.
+        /// txtBaslangicTarih control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtBaslangicTarihi;
+        protected global::System.Web.UI.WebControls.TextBox txtBaslangicTarih;
         
         /// <summary>
-        /// txtBitisTarihi control.
+        /// txtBitisTarih control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtBitisTarihi;
+        protected global::System.Web.UI.WebControls.TextBox txtBitisTarih;
         
         /// <summary>
-        /// btnVazgec control.
+        /// anketDurum control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton btnVazgec;
+        protected global::System.Web.UI.WebControls.RadioButtonList anketDurum;
         
         /// <summary>
-        /// btnAnketOlustur control.
+        /// btnIptal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton btnAnketOlustur;
+        protected global::System.Web.UI.WebControls.Button btnIptal;
+        
+        /// <summary>
+        /// btnKaydet control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnKaydet;
+        
+        /// <summary>
+        /// Mesaj control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Mesaj;
     }
 }

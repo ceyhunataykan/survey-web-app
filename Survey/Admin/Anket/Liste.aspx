@@ -35,28 +35,29 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>Anket 1</td>
-                                            <td>21.11.2016</td>
-                                            <td>21.12.2016</td>
-                                            <td>19</td>
-                                            <td>
-                                                <div class="btn btn-xs btn-danger">Pasif</div>
-                                            </td>
-                                            <td>
-                                                <a href="soruekle.aspx" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Soru Ekle"><span class="glyphicon glyphicon-plus"></span></a>
-                                                <a href="#" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Üyeleri Gör"><span class="glyphicon glyphicon-user"></span></a>
-                                                <a href="#" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Anketi Gör"><span class="glyphicon glyphicon-globe"></span></a>
-                                                <a href="#" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Rapor"><span class="glyphicon glyphicon-signal"></span></a>
-                                                <a href="#" class="btn btn-xs btn-info" data-toggle="tooltip" data-placement="top" title="Düzenle"><span class="glyphicon glyphicon-cog"></span></a>
-                                                <a href="#" class="btn btn-xs btn-danger" data-toggle="tooltip" data-placement="top" title="Sil"><span class="glyphicon glyphicon-remove"></span></a>
-                                            </td>
-                                        </tr>
+                                        <asp:PlaceHolder runat="server" ID="itemPlaceHolder" />
                                     </tbody>
                                 </table>
                             </div>
                         </LayoutTemplate>
-                        <ItemTemplate></ItemTemplate>
+                        <ItemTemplate>
+                            <tr>
+                                <td><%# Eval("Anket_Adi") %></td>
+                                <td><%# Eval("Anket_Baslangic_Tarih") %></td>
+                                <td><%# Eval("Anket_Adi") %></td>
+                                <td><%# Eval("Anket_Bitis_Tarih") %></td>
+                                <td>
+                                    <%# Eval("Anket_Durum") %></div>
+                                </td>
+                                <td>
+                                    <a href="Soru/Liste.aspx?id=<%# Eval("Anket_ID") %>"  class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Sorular"><span class="glyphicon glyphicon-plus"></span></a>
+                                    <a href="#" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Anketi Gör"><span class="glyphicon glyphicon-globe"></span></a>
+                                    <a href="#" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Rapor"><span class="glyphicon glyphicon-signal"></span></a>
+                                    <a href="#" class="btn btn-xs btn-info" data-toggle="tooltip" data-placement="top" title="Düzenle"><span class="glyphicon glyphicon-cog"></span></a>
+                                    <a href="#" class="btn btn-xs btn-danger" data-toggle="tooltip" data-placement="top" title="Sil"><span class="glyphicon glyphicon-remove"></span></a>
+                                </td>
+                            </tr>
+                        </ItemTemplate>
                     </asp:ListView>
                 </div>
                 <div class="panel-footer text-center" style="color: #444444">
