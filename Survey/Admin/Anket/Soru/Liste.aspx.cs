@@ -11,17 +11,24 @@ namespace Survey.Admin.Anket.Soru
     public partial class Liste : System.Web.UI.Page
     {
         AnketEntities db = new AnketEntities();
-        int id;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(Request.QueryString["id"]))
+            if (string.IsNullOrEmpty(Request.QueryString["anket-id"]))
             {
                 Response.Redirect("/Admin/Dashboard.aspx");
             }
-            id = Convert.ToInt32(Request.QueryString["id"]);
-            var liste = db.Sorular.Where(s => s.Anket_ID == id).ToList();
-            lvSoruListe.DataSource = liste;
+            if (IsPostBack)
+            {
+                return;
+            }
+            test.anketid = Convert.ToInt32(Request.QueryString["anket-id"]);
+            lvSoruListe.DataSource = db.Sorular.Where(s => s.Anket_ID == test.anketid).ToList();
             lvSoruListe.DataBind();
+        }
+
+        protected void btnSoru_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Ekle.aspx");
         }
     }
 }

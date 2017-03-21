@@ -103,3 +103,6 @@
         </div>
     </div>
 </asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="scripts" runat="server">
+    <script src="/Scripts/morris.js"></script>
+</asp:Content>

@@ -114,6 +114,7 @@
     <Content Include="Admin\Anket\Soru\Ekle.aspx" />
     <Content Include="Admin\Anket\Soru\Guncelle.aspx" />
     <Content Include="Admin\Anket\Soru\Liste.aspx" />
+    <Content Include="Admin\Anket\Soru\Secenek\Liste.aspx" />
     <Content Include="Admin\Dashboard.aspx" />
     <Content Include="Admin\Hesap\Parola.aspx" />
     <Content Include="Admin\Hesap\Profil.aspx" />
@@ -276,6 +277,13 @@
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\Anket\Soru\Liste.aspx.designer.cs">
+      <DependentUpon>Liste.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Anket\Soru\Secenek\Liste.aspx.cs">
+      <DependentUpon>Liste.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Anket\Soru\Secenek\Liste.aspx.designer.cs">
       <DependentUpon>Liste.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Dashboard.aspx.cs">

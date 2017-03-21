@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Survey.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +10,51 @@ namespace Survey.Admin.Anket.Soru
 {
     public partial class Ekle : System.Web.UI.Page
     {
+        AnketEntities db = new AnketEntities();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (IsPostBack)
+            {
+                return;
+            }
+        }
 
+        protected void btnKaydet_Click(object sender, EventArgs e)
+        {
+            if (txtSoruAd.Text == "")
+            {
+                Mesaj.Text = "Bilgiler Boş Olamaz";
+                Mesaj.CssClass = "alert alert-danger";
+                ClientScript.RegisterStartupScript(this.GetType(), "HideLabel", "<script type=\"text/javascript\">setTimeout(\"document.getElementById('" + Mesaj.ClientID + "').style.display='none'\",4000)</script>");
+                return;
+            }
+            else
+            {
+                Sorular Ekle = new Sorular();
+                Ekle.Soru_Baslik = txtSoruAd.Text.Trim();
+                Ekle.Anket_ID = test.anketid;
+                Ekle.Soru_Tipi = Convert.ToInt32(ddlSoruTipi.SelectedValue);
+                if (rbZorunlu.SelectedValue == "1")
+                {
+                    Ekle.Soru_Durum = true;
+                }
+                else
+                {
+                    Ekle.Soru_Durum = false;
+                }
+                db.Sorular.Add(Ekle);
+                db.SaveChanges();
+                Mesaj.Text = "Anket Oluşturuldu. Soru Listesine Yönlendiriliyorsunuz...";
+                Mesaj.CssClass = "alert alert-success";
+                ClientScript.RegisterStartupScript(this.GetType(), "HideLabel", "<script type=\"text/javascript\">setTimeout(\"document.getElementById('" + Mesaj.ClientID + "').style.display='none'\",4000)</script>");
+
+                Response.Redirect("Liste.aspx?anket-id=" + test.anketid);
+            }
+        }
+
+        protected void btnIptal_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Liste.aspx?anket-id=" + test.anketid);
         }
     }
 }

@@ -51,6 +51,7 @@
     </form>
     <script src="/scripts/jquery-3.1.1.js"></script>
     <script src="/scripts/bootstrap.min.js"></script>
-    <script src="/Scripts/morris.js"></script>
+    <asp:ContentPlaceHolder ID="scripts" runat="server">
+    </asp:ContentPlaceHolder>  
 </body>
 </html>

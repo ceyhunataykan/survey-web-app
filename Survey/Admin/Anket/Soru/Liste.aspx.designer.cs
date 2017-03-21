@@ -13,13 +13,13 @@ namespace Survey.Admin.Anket.Soru {
     public partial class Liste {
         
         /// <summary>
-        /// btnSoruEkle control.
+        /// btnSoru control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton btnSoruEkle;
+        protected global::System.Web.UI.WebControls.Button btnSoru;
         
         /// <summary>
         /// lvSoruListe control.

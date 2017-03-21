@@ -1,10 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="Liste.aspx.cs" Inherits="Survey.Admin.Anket.Soru.Liste" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <div class="row">
+    <div class="row">
         <div class="col-sm-12">
-            <button runat="server" id="btnSoruEkle" class="btn btn-primary" style="height: 50px; font-size: 16px; font-weight: 500; font-family: 'Roboto', sans-serif;"><span class="glyphicon glyphicon-check"></span>&nbsp;&nbsp;Soru Ekle</button>
+            <asp:Button Text="Soru Ekle" ID="btnSoru" CssClass="btn btn-success" OnClick="btnSoru_Click" runat="server" />
         </div>
     </div>
     <div class="row" style="margin-top: 25px">
@@ -40,10 +41,9 @@
                                 <td><%# Eval("Soru_Tipi") %></td>
                                 <td><%# Eval("Soru_Olusturma_Tarih") %></td>
                                 <td><%# Eval("Soru_Guncelle_Tarih") %></td>
+                                <td><%# Eval("Soru_Durum") %></td>
                                 <td>
-                                    <%# Eval("Soru_Durum") %></div>
-                                </td>
-                                <td>
+                                    <a href="Secenek/Liste.aspx?soru-id=<%# Eval("Soru_ID") %>" class="btn btn-xs btn-warning" data-toggle="tooltip" data-placement="top" title="Seçenekler"><span class="glyphicon glyphicon-edit"></span></a>
                                     <a href="#" class="btn btn-xs btn-info" data-toggle="tooltip" data-placement="top" title="Düzenle"><span class="glyphicon glyphicon-cog"></span></a>
                                     <a href="#" class="btn btn-xs btn-danger" data-toggle="tooltip" data-placement="top" title="Sil"><span class="glyphicon glyphicon-remove"></span></a>
                                 </td>
@@ -51,4 +51,7 @@
                         </ItemTemplate>
                     </asp:ListView>
                 </div>
+            </div>
+        </div>
+    </div>
 </asp:Content>
