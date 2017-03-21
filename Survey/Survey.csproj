@@ -111,6 +111,7 @@
     <Content Include="Admin\Anket\Ekle.aspx" />
     <Content Include="Admin\Anket\Guncelle.aspx" />
     <Content Include="Admin\Anket\Liste.aspx" />
+    <Content Include="Admin\Anket\Onizleme.aspx" />
     <Content Include="Admin\Anket\Soru\Ekle.aspx" />
     <Content Include="Admin\Anket\Soru\Guncelle.aspx" />
     <Content Include="Admin\Anket\Soru\Liste.aspx" />
@@ -257,6 +258,13 @@
     </Compile>
     <Compile Include="Admin\Anket\Liste.aspx.designer.cs">
       <DependentUpon>Liste.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Anket\Onizleme.aspx.cs">
+      <DependentUpon>Onizleme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Anket\Onizleme.aspx.designer.cs">
+      <DependentUpon>Onizleme.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Anket\Soru\Ekle.aspx.cs">
       <DependentUpon>Ekle.aspx</DependentUpon>

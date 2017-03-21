@@ -10,13 +10,13 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
         <div class="col-sm-12">
-            <a href="Anket/Ekle.aspx" id="btnAnketEkle" class="btn btn-primary btn-block" style="height: 50px; font-size: 16px; font-weight: 500; font-family: 'Roboto', sans-serif;"><span class="glyphicon glyphicon-check"></span>&nbsp;&nbsp;Yeni Anket Oluştur</a>
+            <a href="Ekle.aspx" id="btnAnketEkle" class="btn btn-info btn-block" style="height: 50px; font-size: 16px; font-weight: 500; font-family: 'Roboto', sans-serif;"><span class="glyphicon glyphicon-check"></span>&nbsp;&nbsp;Yeni Anket Oluştur</a>
         </div>
     </div>
     <div class="row" style="margin-top: 25px">
         <div class="col-sm-12">
-            <div class="panel panel-warning">
-                <div class="panel-heading" style="color: #fff; background-color: #e27d7a; border-color: #e27d7a;">
+            <div class="panel">
+                <div class="panel-heading" style="color: lightgray; background-color: dimgray;">
                     <h3>Anket Listesi</h3>
                 </div>
                 <div class="panel-body">
@@ -27,11 +27,11 @@
                                     <thead>
                                         <tr>
                                             <th>Anket Adı</th>
-                                            <th>Başlangıç Tarihi</th>
-                                            <th>Bitiş Tarihi</th>
-                                            <th>Soru Sayısı</th>
-                                            <th>Durum</th>
-                                            <th>İşlemler</th>
+                                            <th class="text-center">Başlangıç Tarihi</th>
+                                            <th class="text-center">Bitiş Tarihi</th>
+                                            <th class="text-center">Soru Sayısı</th>
+                                            <th class="text-center">Durum</th>
+                                            <th class="text-center">İşlemler</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -42,17 +42,17 @@
                         </LayoutTemplate>
                         <ItemTemplate>
                             <tr>
-                                <td><%# Eval("Anket_Adi") %></td>
-                                <td><%# Eval("basTarih") %></td>
-                                <td><%# Eval("bitTarih") %></td>
-                                <td><%# Eval("Soru_Sayi") %></td>
-                                <td><%# Eval("Anket_Durum") %></td>
-                                <td>
-                                    <a href="Soru/Liste.aspx?anket-id=<%# Eval("Anket_ID") %>" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Sorular"><span class="glyphicon glyphicon-plus"></span></a>
-                                    <a href="#" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Anketi Gör"><span class="glyphicon glyphicon-globe"></span></a>
-                                    <a href="#" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Rapor"><span class="glyphicon glyphicon-signal"></span></a>
-                                    <a href="#" class="btn btn-xs btn-info" data-toggle="tooltip" data-placement="top" title="Düzenle"><span class="glyphicon glyphicon-cog"></span></a>
-                                    <a href="#" class="btn btn-xs btn-danger" data-toggle="tooltip" data-placement="top" title="Sil"><span class="glyphicon glyphicon-remove"></span></a>
+                                <td><a href="Soru/Liste.aspx?anket-id=<%# Eval("Anket_ID") %>" style="color:dimgray; font-size:12px; font-weight:bold"><%# Eval("Anket_Adi") %></a></td>
+                                <td class="text-center"><%# Eval("basTarih","{0:d}") %></td>
+                                <td class="text-center"><%# Eval("bitTarih","{0:d}") %></td>
+                                <td class="text-center"><%# Eval("Soru_Sayi") %></td>
+                                <%# (bool)Eval("Anket_Durum")==true ? "<td class="+ "\"text-center\""+"><span class="+ "\"label label-success\""+">Aktif</span></td>" : "<td class="+ "\"text-center\""+"><span class="+"\"label label-danger\""+">Pasif</span></td>" %>
+                                <td class="text-center">
+                                    <a href="Soru/Liste.aspx?anket-id=<%# Eval("Anket_ID") %>" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Soru Ekle">Soru Ekle</a>
+                                    <a href="Onizleme.aspx?anket-id=<%# Eval("Anket_ID") %>" class="btn btn-xs btn-primary" data-toggle="tooltip" data-placement="top" title="Önizleme">Önizleme</a>
+                                    <a href="#" class="btn btn-xs btn-primary" data-toggle="tooltip" data-placement="top" title="Rapor">Rapor</a>
+                                    <a href="#" class="btn btn-xs btn-info" data-toggle="tooltip" data-placement="top" title="Düzenle">Düzenle</a>
+                                    <a href="#" class="btn btn-xs btn-danger" data-toggle="tooltip" data-placement="top" title="Sil">Sil</a>
                                 </td>
                             </tr>
                         </ItemTemplate>

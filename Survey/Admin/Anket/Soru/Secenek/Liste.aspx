@@ -28,7 +28,7 @@
         </div>
         <div class="col-md-12">
             <div class="panel panel-warning">
-                <div class="panel-heading" style="height:50px; color: #fff; background-color: #e27d7a; border-color: #e27d7a;">
+                <div class="panel-heading" style="color: lightgray; background-color: dimgray;">
                     <h5>Seçenekler</h5>
                 </div>
                 <div class="panel-body">

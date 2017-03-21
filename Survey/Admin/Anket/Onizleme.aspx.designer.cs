@@ -7,36 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Survey.Admin.Anket.Soru {
+namespace Survey.Admin.Anket {
     
     
-    public partial class Liste {
+    public partial class Onizleme {
         
         /// <summary>
-        /// btnSoru control.
+        /// lblBaslik control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSoru;
+        protected global::System.Web.UI.WebControls.Label lblBaslik;
         
         /// <summary>
-        /// btnGeri control.
+        /// rptListe control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGeri;
-        
-        /// <summary>
-        /// lvSoruListe control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView lvSoruListe;
+        protected global::System.Web.UI.WebControls.Repeater rptListe;
     }
 }

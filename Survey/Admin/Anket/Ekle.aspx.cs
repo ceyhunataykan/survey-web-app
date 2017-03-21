@@ -43,24 +43,17 @@ namespace Survey.Admin.Anket
                 }
                 db.Anketler.Add(Ekle);
                 db.SaveChanges();
-                temizle();
 
                 Mesaj.Text = "Anket Oluşturuldu.";
                 Mesaj.CssClass = "alert alert-success";
                 ClientScript.RegisterStartupScript(this.GetType(), "HideLabel", "<script type=\"text/javascript\">setTimeout(\"document.getElementById('" + Mesaj.ClientID + "').style.display='none'\",4000)</script>");
+                Response.Redirect("Liste.aspx");
             }         
         }
 
         protected void btnIptal_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Admin/Dashboard.aspx");
-        }
-
-        private void temizle()
-        {
-            txtAnketAd.Text = "";
-            txtBaslangicTarih.Text = "";
-            txtBitisTarih.Text = "";
+            Response.Redirect("Liste.aspx");
         }
     }
 }

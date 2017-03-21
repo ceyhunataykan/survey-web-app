@@ -34,6 +34,7 @@ namespace Survey.Admin.Anket.Soru
                 Ekle.Soru_Baslik = txtSoruAd.Text.Trim();
                 Ekle.Anket_ID = test.anketid;
                 Ekle.Soru_Tipi = Convert.ToInt32(ddlSoruTipi.SelectedValue);
+                Ekle.Soru_Olusturma_Tarih = DateTime.Parse(DateTime.Now.ToShortDateString());
                 if (rbZorunlu.SelectedValue == "1")
                 {
                     Ekle.Soru_Durum = true;

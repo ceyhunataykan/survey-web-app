@@ -30,5 +30,10 @@ namespace Survey.Admin.Anket.Soru
         {
             Response.Redirect("Ekle.aspx");
         }
+
+        protected void btnGeri_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Admin/Anket/Liste.aspx");
+        }
     }
 }

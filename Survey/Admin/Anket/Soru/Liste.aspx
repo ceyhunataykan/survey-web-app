@@ -5,13 +5,18 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
         <div class="col-sm-12">
-            <asp:Button Text="Soru Ekle" ID="btnSoru" CssClass="btn btn-success" OnClick="btnSoru_Click" runat="server" />
+            <div class="pull-left">
+                <asp:Button Text="Soru Ekle" ID="btnSoru" CssClass="btn btn-success btn-lg" Font-Size="16px" OnClick="btnSoru_Click" runat="server" />
+            </div>
+            <div class="pull-right">
+                <asp:Button Text="Geri Dön" ID="btnGeri" CssClass="btn btn-primary btn-lg" Font-Size="16px" OnClick="btnGeri_Click" runat="server" />
+            </div>
         </div>
     </div>
     <div class="row" style="margin-top: 25px">
         <div class="col-sm-12">
             <div class="panel panel-warning">
-                <div class="panel-heading" style="color: #fff; background-color: #e27d7a; border-color: #e27d7a;">
+                <div class="panel-heading" style="color: lightgray; background-color: dimgray;">
                     <h3>Soru Listesi</h3>
                 </div>
                 <div class="panel-body">
@@ -22,11 +27,11 @@
                                     <thead>
                                         <tr>
                                             <th>Soru Başlığı</th>
-                                            <th>Soru Tipi</th>
-                                            <th>Oluşturulma Tarihi</th>
-                                            <th>Düzenlenme Tarihi</th>
-                                            <th>Durum</th>
-                                            <th>İşlemler</th>
+                                            <th class="text-center">Soru Tipi</th>
+                                            <th class="text-center">Oluşturulma Tarihi</th>
+                                            <th class="text-center">Düzenlenme Tarihi</th>
+                                            <th class="text-center">Durum</th>
+                                            <th class="text-center">İşlemler</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -37,15 +42,15 @@
                         </LayoutTemplate>
                         <ItemTemplate>
                             <tr>
-                                <td><%# Eval("Soru_Baslik") %></td>
-                                <td><%# Eval("Soru_Tipi") %></td>
-                                <td><%# Eval("Soru_Olusturma_Tarih") %></td>
-                                <td><%# Eval("Soru_Guncelle_Tarih") %></td>
-                                <td><%# Eval("Soru_Durum") %></td>
-                                <td>
-                                    <a href="Secenek/Liste.aspx?soru-id=<%# Eval("Soru_ID") %>" class="btn btn-xs btn-warning" data-toggle="tooltip" data-placement="top" title="Seçenekler"><span class="glyphicon glyphicon-edit"></span></a>
-                                    <a href="#" class="btn btn-xs btn-info" data-toggle="tooltip" data-placement="top" title="Düzenle"><span class="glyphicon glyphicon-cog"></span></a>
-                                    <a href="#" class="btn btn-xs btn-danger" data-toggle="tooltip" data-placement="top" title="Sil"><span class="glyphicon glyphicon-remove"></span></a>
+                                <td><a href="Secenek/Liste.aspx?soru-id=<%# Eval("Soru_ID") %>" style="color:dimgray; font-size:12px; font-weight:bold"><%# Eval("Soru_Baslik") %></a></td>
+                                <%# (int)Eval("Soru_Tipi") == 1 ? "<td class="+ "\"text-center\""+"><span class="+ "\"label label-info\""+">Çoktan Tek Seçmeli</span></td>" : "<td class="+ "\"text-center\""+"><span class="+"\"label label-warning\""+">Çoktan Çok Seçmeli</span></td>" %>
+                                <td class="text-center"><%# Eval("Soru_Olusturma_Tarih","{0:d}") %></td>
+                                <td class="text-center"><%# Eval("Soru_Guncelle_Tarih","{0:d}") %></td>
+                                <%# (bool)Eval("Soru_Durum")==true ? "<td class="+ "\"text-center\""+"><span class="+ "\"label label-info\""+">Zorunlu</span></td>" : "<td class="+ "\"text-center\""+"><span class="+"\"label label-warning\""+">Zorunlu Değil</span></td>" %>
+                                <td class="text-center">
+                                    <a href="Secenek/Liste.aspx?soru-id=<%# Eval("Soru_ID") %>" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Seçenekler">Seçenek Ekle</a>
+                                    <a href="#" class="btn btn-xs btn-info" data-toggle="tooltip" data-placement="top" title="Düzenle">Düzenle</a>
+                                    <a href="#" class="btn btn-xs btn-danger" data-toggle="tooltip" data-placement="top" title="Sil">Sil</a>
                                 </td>
                             </tr>
                         </ItemTemplate>
