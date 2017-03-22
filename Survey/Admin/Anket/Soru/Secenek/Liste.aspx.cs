@@ -46,7 +46,7 @@ namespace Survey.Admin.Anket.Soru.Secenek
                 txtSecenek.Text = "";
                 lvSecenekListe.DataSource = db.Secenekler.Where(s => s.Soru_ID == test.soruid).ToList();
                 lvSecenekListe.DataBind();
-                Mesaj.Text = "Seşenek Oluşturuldu.";
+                Mesaj.Text = "Seçenek Oluşturuldu.";
                 Mesaj.CssClass = "alert alert-success";
                 ClientScript.RegisterStartupScript(this.GetType(), "HideLabel", "<script type=\"text/javascript\">setTimeout(\"document.getElementById('" + Mesaj.ClientID + "').style.display='none'\",4000)</script>");
             }

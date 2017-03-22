@@ -48,7 +48,7 @@
                                 <td class="text-center"><%# Eval("Soru_Sayi") %></td>
                                 <%# (bool)Eval("Anket_Durum")==true ? "<td class="+ "\"text-center\""+"><span class="+ "\"label label-success\""+">Aktif</span></td>" : "<td class="+ "\"text-center\""+"><span class="+"\"label label-danger\""+">Pasif</span></td>" %>
                                 <td class="text-center">
-                                    <a href="Soru/Liste.aspx?anket-id=<%# Eval("Anket_ID") %>" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Soru Ekle">Soru Ekle</a>
+                                    <a href="Soru/Liste.aspx?anket-id=<%# Eval("Anket_ID") %>" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Soru Ekle">Sorular</a>
                                     <a href="Onizleme.aspx?anket-id=<%# Eval("Anket_ID") %>" class="btn btn-xs btn-primary" data-toggle="tooltip" data-placement="top" title="Önizleme">Önizleme</a>
                                     <a href="#" class="btn btn-xs btn-primary" data-toggle="tooltip" data-placement="top" title="Rapor">Rapor</a>
                                     <a href="#" class="btn btn-xs btn-info" data-toggle="tooltip" data-placement="top" title="Düzenle">Düzenle</a>

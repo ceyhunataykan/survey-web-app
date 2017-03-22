@@ -23,6 +23,7 @@
                             <asp:Label Text="" ID="Mesaj" runat="server" />
                         </div>
                     </div>
+                    <br />
                 </fieldset>
             </div>
         </div>

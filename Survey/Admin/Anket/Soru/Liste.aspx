@@ -48,7 +48,7 @@
                                 <td class="text-center"><%# Eval("Soru_Guncelle_Tarih","{0:d}") %></td>
                                 <%# (bool)Eval("Soru_Durum")==true ? "<td class="+ "\"text-center\""+"><span class="+ "\"label label-info\""+">Zorunlu</span></td>" : "<td class="+ "\"text-center\""+"><span class="+"\"label label-warning\""+">Zorunlu Değil</span></td>" %>
                                 <td class="text-center">
-                                    <a href="Secenek/Liste.aspx?soru-id=<%# Eval("Soru_ID") %>" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Seçenekler">Seçenek Ekle</a>
+                                    <a href="Secenek/Liste.aspx?soru-id=<%# Eval("Soru_ID") %>" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Seçenekler">Seçenekler</a>
                                     <a href="#" class="btn btn-xs btn-info" data-toggle="tooltip" data-placement="top" title="Düzenle">Düzenle</a>
                                     <a href="#" class="btn btn-xs btn-danger" data-toggle="tooltip" data-placement="top" title="Sil">Sil</a>
                                 </td>
