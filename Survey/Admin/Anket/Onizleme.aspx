@@ -11,24 +11,20 @@
         <ItemTemplate>
             <div class="col-md-12">
                 <div class="bg-success" style="height: 50px; padding: 5px; color: dimgray; background-color: lightgray">
-                    <h4 id="soru-id=<%# Eval("Soru_ID") %>"><%# Eval("Soru_Baslik") %></h4>
+                    <asp:Literal runat="server" ID="ltSoruTipi" Text='<%# Eval("Soru_Tipi") %>' Visible="true" />
+                    <asp:Literal runat="server" ID="ltSoru_ID" Text='<%# Eval("Soru_ID") %>' Visible="true" />
+                    <asp:Literal runat="server" ID="ltDurum" Text='<%# Eval("Soru_Durum") %>'  Visible="true" />
+                    <h4>
+                        <asp:Label ID="lblSoruBaslik" Text='<%# Eval("Soru_Baslik") %>' runat="server" /> </h4>
                 </div>
-<%--                <%if ((int)Eval("Soru_Tipi") == 1)
-                    {%>--%>
                 <div class="well">
-                    <asp:CheckBoxList runat="server" ID="ckbSec">
-                    </asp:CheckBoxList>
+                    <asp:CheckBoxList runat="server" ID="ckbSec" CssClass="checkbox"></asp:CheckBoxList>
+                    <asp:RadioButtonList runat="server" ID="rbSec" CssClass="radio" ></asp:RadioButtonList>
                 </div>
-<%--                <%} %>
-                <%else if ((int)Eval("Soru_Tipi") == 2)
-                    { %>
-
-                <asp:RadioButtonList runat="server" ID="rbSec">
-                </asp:RadioButtonList>
-                <%} %>--%>
             </div>
         </ItemTemplate>
     </asp:Repeater>
+    <asp:Button Text="Kaydet" ID="btnKaydet" runat="server" OnClick="btnKaydet_Click" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="scripts" runat="server">
 </asp:Content>
