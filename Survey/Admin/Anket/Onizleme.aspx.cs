@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Survey.Models;
+using System.Drawing;
 
 namespace Survey.Admin.Anket
 {
@@ -20,7 +21,8 @@ namespace Survey.Admin.Anket
             if (IsPostBack)
             {
                 return;
-            }                   
+            }
+            
             test.anketid = Convert.ToInt32(Request.QueryString["anket-id"]);
 
             var bas = db.Sorular.Where(s => s.Anket_ID == test.anketid).FirstOrDefault();
@@ -65,6 +67,12 @@ namespace Survey.Admin.Anket
                 if (tip == 1)
                 {
                     RadioButtonList rbl = (RadioButtonList)rptListe.Items[i].FindControl("rbSec");
+                    if (rbl.SelectedIndex == -1)
+                    {
+                       Label lblSoruBaslik = (Label)rptListe.Items[i].FindControl("lblSoruBaslik");
+                        lblSoruBaslik.BackColor = Color.Red;
+                        return;
+                    }
                     for (int j = 0; j < rbl.Items.Count; j++)
                     {
                         if (rbl.Items[j].Selected)
