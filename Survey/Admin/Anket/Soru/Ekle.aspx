@@ -12,7 +12,7 @@
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Soru Adı :</label>
                             <div class="col-sm-6">
-                                <asp:TextBox runat="server" ID="txtSoruAd" CssClass="form-control"/>
+                                <asp:TextBox runat="server" ID="txtSoruAd" CssClass="form-control" />
                             </div>
                         </div>
                         <div class="form-group">
@@ -41,7 +41,7 @@
                             </div>
                         </div>
                         <br />
-                        <div class="form-group">   
+                        <div class="form-group">
                             <div class="col-sm-4"></div>
                             <div class="col-md-6">
                                 <asp:Label Text="" ID="Mesaj" runat="server" />
@@ -52,8 +52,6 @@
             </div>
         </div>
     </div>
-
-    <%--</div>--%>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="scripts" runat="server">
 </asp:Content>

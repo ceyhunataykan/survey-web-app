@@ -33,6 +33,7 @@ namespace Survey.Admin.Anket
                 Ekle.Anket_Adi = txtAnketAd.Text.Trim();
                 Ekle.Anket_Baslangic_Tarih = Convert.ToDateTime(txtBaslangicTarih.Text);
                 Ekle.Anket_Bitis_Tarih = Convert.ToDateTime(txtBitisTarih.Text);
+                Ekle.Anket_Katilim = 0;
                 if (anketDurum.SelectedValue == "1")
                 {
                     Ekle.Anket_Durum = true;

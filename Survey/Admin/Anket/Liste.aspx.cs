@@ -22,5 +22,13 @@ namespace Survey.Admin.Anket
             lvAnketListe.DataSource = liste;
             lvAnketListe.DataBind();
         }
+        protected void btnSil_Command(object sender, CommandEventArgs e)
+        {
+            int id = Convert.ToInt32(e.CommandArgument);
+            Anketler sil = db.Anketler.Where(a => a.Anket_ID == id).FirstOrDefault();
+            db.Anketler.Remove(sil);
+            db.SaveChanges();
+            Response.Redirect("Liste.aspx");
+        }
     }
 }

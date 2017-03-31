@@ -35,5 +35,14 @@ namespace Survey.Admin.Anket.Soru
         {
             Response.Redirect("/Admin/Anket/Liste.aspx");
         }
+
+        protected void btnSil_Command(object sender, CommandEventArgs e)
+        {
+            int id = Convert.ToInt32(e.CommandArgument);
+            Sorular sil = db.Sorular.Where(s => s.Soru_ID == id).FirstOrDefault();
+            db.Sorular.Remove(sil);
+            db.SaveChanges();
+            Response.Redirect("Liste.aspx?anket-id=" + test.anketid);
+        }
     }
 }

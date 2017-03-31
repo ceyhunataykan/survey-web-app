@@ -79,9 +79,9 @@ namespace Survey.Admin.Anket
                         {
                             Ekle.Anket_ID = test.anketid;
                             Ekle.Soru_ID = Convert.ToInt32(ltSoru_ID.Text);
-                            Ekle.Secenek_ID = Convert.ToInt32(rbl.Items[j].Value.ToString());
+                            Ekle.Secenek_ID = Convert.ToInt32(rbl.Items[j].Value.ToString());                         
                             db.Yanitlar.Add(Ekle);
-                            db.SaveChanges();
+                            db.SaveChanges();                        
                         }
                     }
                 }
@@ -101,6 +101,10 @@ namespace Survey.Admin.Anket
                     }
                 }
             }
+            Anketler anketKatilim = db.Anketler.Where(a => a.Anket_ID == test.anketid).FirstOrDefault();
+            anketKatilim.Anket_Katilim = anketKatilim.Anket_Katilim + 1;
+            db.SaveChanges();
+            Response.Redirect("~/Admin/Dashboard.aspx");
         }
     }
 }

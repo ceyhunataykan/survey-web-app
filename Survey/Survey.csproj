@@ -123,6 +123,8 @@
     <Content Include="Admin\Kullanici\Guncelle.aspx" />
     <Content Include="Admin\Kullanici\Liste.aspx" />
     <Content Include="Admin\Kullanici\Rol\Yonet.aspx" />
+    <Content Include="Admin\Rapor\Analiz.aspx" />
+    <Content Include="Admin\Rapor\Rapor.aspx" />
     <Content Include="Content\anketp-logo-big.png" />
     <Content Include="Content\anketp-logo.jpg" />
     <Content Include="Content\back.jpg" />
@@ -343,6 +345,20 @@
     <Compile Include="Admin\Kullanici\Rol\Yonet.aspx.designer.cs">
       <DependentUpon>Yonet.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Rapor\Analiz.aspx.cs">
+      <DependentUpon>Analiz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Rapor\Analiz.aspx.designer.cs">
+      <DependentUpon>Analiz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Rapor\Rapor.aspx.cs">
+      <DependentUpon>Rapor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Rapor\Rapor.aspx.designer.cs">
+      <DependentUpon>Rapor.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Anketler.cs">
       <DependentUpon>dbModel.tt</DependentUpon>
     </Compile>
@@ -400,7 +416,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Admin\Rapor\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
