@@ -13,5 +13,15 @@ namespace Survey.Admin.Kullanici
         {
 
         }
+
+        protected void btnIptal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnKaydet_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

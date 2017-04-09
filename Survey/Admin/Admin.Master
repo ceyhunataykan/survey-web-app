@@ -28,8 +28,8 @@
                     <ul class="nav navbar-nav" style="margin-left: 30px; margin-top:5px">
                         <li><a href="/Admin/Dashboard.aspx">Dashboard</a></li>
                         <li><a href="/Admin/Anket/Liste.aspx">Anketler</a></li>
-                        <li><a href="uyeler.aspx">Üyeler</a></li>
-                        <li><a href="uyeler.aspx">Raporlar</a></li>
+                        <li><a href="/Admin/Kullanici/Liste.aspx">Üyeler</a></li>
+                        <li><a href="/Admin/Rapor/Rapor.aspx">Raporlar</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">

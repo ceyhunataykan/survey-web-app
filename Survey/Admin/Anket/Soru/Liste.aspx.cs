@@ -10,7 +10,7 @@ namespace Survey.Admin.Anket.Soru
 {
     public partial class Liste : System.Web.UI.Page
     {
-        AnketEntities db = new AnketEntities();
+        AnketEntities1 db = new AnketEntities1();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(Request.QueryString["anket-id"]))

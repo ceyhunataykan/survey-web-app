@@ -15,10 +15,10 @@ namespace Survey.Models
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class AnketEntities : DbContext
+    public partial class AnketEntities1 : DbContext
     {
-        public AnketEntities()
-            : base("name=AnketEntities")
+        public AnketEntities1()
+            : base("name=AnketEntities1")
         {
         }
     
@@ -28,6 +28,8 @@ namespace Survey.Models
         }
     
         public virtual DbSet<Anketler> Anketler { get; set; }
+        public virtual DbSet<Kullanici> Kullanici { get; set; }
+        public virtual DbSet<Rol> Rol { get; set; }
         public virtual DbSet<Secenekler> Secenekler { get; set; }
         public virtual DbSet<Sorular> Sorular { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
