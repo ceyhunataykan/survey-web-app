@@ -11,21 +11,6 @@
     <link href="Content/login.css" rel="stylesheet" />
     <script src="scripts/jquery-3.1.1.min.js"></script>
     <script src="scripts/bootstrap.min.js"></script>
-    <script>
-        $(function () {
-            $("#btnGir").click(function () {
-                var kadi = $("#txtKullanici").val();
-                var parola = $("#txtParola").val();
-                if (kadi == "" || parola == "") {
-                    $("#sonucGiris").html("Boş Bırakmayınız");
-                    $("#sonucGiris").removeClass();
-                    $("#sonucGiris").addClass("alert alert-danger");
-                    return false;
-                };
-                return false;
-            });    
-        });
-    </script>
 </head>
 <body>
     <div>
@@ -40,7 +25,30 @@
                     <input type="submit" class="btn btn-primary btn-lg btn-block" value="Giriş" />
                     <a href="Signup.aspx" class="btn btn-danger btn-lg btn-block">Kayıt Ol</a>
                 </div>
-            </form>          
+                <br />
+                <%
+                    if (Request.QueryString["h"] != null)
+                    {
+                        if (Request.QueryString["h"].ToString() == "1")
+                        {
+                %>
+                <div class="alert alert-danger text-center">Lütfen Kullanıcı Adı veya Parola Giriniz!</div>
+                <%} %>
+                <%
+                    if (Request.QueryString["h"].ToString() == "2")
+                    {
+                %>
+                <div class="alert alert-danger text-center">Girilen Kullanıcı Adı veya Parola Geçersiz!</div>
+                <%}%>
+                <%
+                    if (Request.QueryString["h"].ToString() == "3")
+                    {
+                %>
+                <div class="alert alert-danger text-center">Kullanıcı Pasif Durumdadır!</div>
+                <%}%>
+                <%
+                    } %>
+            </form>
         </div>
     </div>
 </body>

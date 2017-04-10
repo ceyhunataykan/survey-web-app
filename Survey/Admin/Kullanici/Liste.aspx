@@ -14,13 +14,12 @@
                     <h3>Kullanıcı Listesi</h3>
                 </div>
                 <div class="panel-body">
-                    <asp:ListView runat="server" ID="lvAnketListe">
+                    <asp:ListView runat="server" ID="lvKullaniciListe">
                         <LayoutTemplate>
                             <div class="table-responsive">
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
-                                            <th>Anket Adı</th>
                                             <th class="text-center">Kullanıcı Adı</th>
                                             <th class="text-center">Email</th>
                                             <th class="text-center">Kullanıcı Tipi</th>
@@ -37,21 +36,18 @@
                             </div>
                         </LayoutTemplate>
                         <ItemTemplate>
-                            <%--<tr>
-                                <td><a href="Soru/Liste.aspx?anket-id=<%# Eval("Kullanici_ID") %>" style="color:dimgray; font-size:12px; font-weight:bold"><%# Eval("Anket_Adi") %></a></td>
+                            <tr>
+                                <td class="text-center"><%# Eval("Kullanici_Adi") %></td>
                                 <td class="text-center"><%# Eval("Kullanici_Email") %></td>
-                                <td class="text-center"><%# Eval("Kullanici_Tipi") %></td>
-                                <td class="text-center"><%# Eval("kayTarih","{0:d}") %></td>
-                                <td class="text-center"><%# Eval("girTarih","{0:d}") %></td>
-                                <%# (bool)Eval("Anket_Durum")==true ? "<td class="+ "\"text-center\""+"><span class="+ "\"label label-success\""+">Aktif</span></td>" : "<td class="+ "\"text-center\""+"><span class="+"\"label label-danger\""+">Pasif</span></td>" %>
+                                <td class="text-center"><%# Eval("Rol_ID") %></td>
+                                <td class="text-center"><%# Eval("Kayıt_Tarihi","{0:d}") %></td>
+                                <td class="text-center"><%# Eval("Son_Giris_Tarihi","{0:d}") %></td>
+                                <%# (bool)Eval("Durum")==true ? "<td class="+ "\"text-center\""+"><span class="+ "\"label label-success\""+">Aktif</span></td>" : "<td class="+ "\"text-center\""+"><span class="+"\"label label-danger\""+">Pasif</span></td>" %>
                                 <td class="text-center">
-                                    <a href="Soru/Liste.aspx?anket-id=<%# Eval("Anket_ID") %>" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Soru Ekle">Sorular</a>
-                                    <a href="Onizleme.aspx?anket-id=<%# Eval("Anket_ID") %>" class="btn btn-xs btn-primary" data-toggle="tooltip" data-placement="top" title="Önizleme">Önizleme</a>
-                                    <a href="#" class="btn btn-xs btn-primary" data-toggle="tooltip" data-placement="top" title="Rapor">Rapor</a>
-                                    <a href="Guncelle.aspx?anket-id=<%# Eval("Anket_ID") %>" class="btn btn-xs btn-info" data-toggle="tooltip" data-placement="top" title="Düzenle">Düzenle</a>
-                                    <asp:Button ID="btnSil" Text="Sil" CssClass="btn btn-xs btn-danger" data-toggle="tooltip" data-placement="top" title="Sil" CommandArgument='<%# Eval("Anket_ID") %>' CommandName="Sil" OnCommand="btnSil_Command" runat="server" />
+                                    <a href="Guncelle.aspx?kullanici-id=<%# Eval("Kullanici_ID") %>" class="btn btn-xs btn-info" data-toggle="tooltip" data-placement="top" title="Düzenle">Düzenle</a>
+                                    <asp:Button ID="btnSil" Text="Sil" CssClass="btn btn-xs btn-danger" data-toggle="tooltip" data-placement="top" title="Sil" CommandArgument='<%# Eval("Kullanici_ID") %>' CommandName="Sil" OnCommand="btnSil_Command" runat="server" />
                                 </td>
-                            </tr>--%>
+                            </tr>
                         </ItemTemplate>
                     </asp:ListView>
                 </div>

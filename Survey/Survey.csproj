@@ -117,6 +117,7 @@
     <Content Include="Admin\Anket\Soru\Liste.aspx" />
     <Content Include="Admin\Anket\Soru\Secenek\Liste.aspx" />
     <Content Include="Admin\Dashboard.aspx" />
+    <Content Include="Admin\Hesap\GuvenliCikis.aspx" />
     <Content Include="Admin\Hesap\Parola.aspx" />
     <Content Include="Admin\Hesap\Profil.aspx" />
     <Content Include="Admin\Kullanici\Ekle.aspx" />
@@ -145,6 +146,7 @@
     <Content Include="font-awesome\css\font-awesome.min.css" />
     <Content Include="font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="GirisYap.aspx" />
+    <Content Include="KayitOl.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -305,6 +307,13 @@
     <Compile Include="Admin\Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Hesap\GuvenliCikis.aspx.cs">
+      <DependentUpon>GuvenliCikis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Hesap\GuvenliCikis.aspx.designer.cs">
+      <DependentUpon>GuvenliCikis.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\Hesap\Parola.aspx.cs">
       <DependentUpon>Parola.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -367,6 +376,13 @@
     </Compile>
     <Compile Include="GirisYap.aspx.designer.cs">
       <DependentUpon>GirisYap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="KayitOl.aspx.cs">
+      <DependentUpon>KayitOl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="KayitOl.aspx.designer.cs">
+      <DependentUpon>KayitOl.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\Anketler.cs">
       <DependentUpon>Model1.tt</DependentUpon>

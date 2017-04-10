@@ -17,16 +17,23 @@ namespace Survey
             {
                 Response.Redirect("Login.aspx?h=1");
             }
-            string kullaniciAdi = Request.Form["txtKullaniciAdi"].ToString(); ;
-            string parola = Request.Form["txtParola"].ToString(); ;
+            string kullaniciAdi = Request.Form["txtKullaniciAdi"].ToString();
+            string parola = Request.Form["txtParola"].ToString();
 
             var sorgu = db.Kullanici.Where(k => k.Kullanici_Adi.Equals(kullaniciAdi) && k.Kullanici_Parola.Equals(parola)).FirstOrDefault();
             if (sorgu != null)
             {
-                Session["uyeId"] = sorgu.Kullanici_ID;
-                Session["uyeKadi"] = sorgu.Kullanici_Adi;
-                Session["uyeAdmin"] = sorgu.Rol.Rol_Adi;
-                Response.Redirect("~/Admin/Dashboard.aspx");
+                if (sorgu.Durum == true)
+                {
+                    Session["uyeId"] = sorgu.Kullanici_ID;
+                    Session["uyeKadi"] = sorgu.Kullanici_Adi;
+                    Session["uyeAdmin"] = sorgu.Rol.Rol_Adi;
+                    Response.Redirect("~/Admin/Dashboard.aspx");
+                }
+                else
+                {
+                    Response.Redirect("Login.aspx?h=3");
+                }
             }
             else
             {

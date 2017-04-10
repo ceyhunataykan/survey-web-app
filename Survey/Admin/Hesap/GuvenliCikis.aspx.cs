@@ -5,16 +5,15 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Survey.Admin
+namespace Survey.Admin.Hesap
 {
-    public partial class Dashboard : System.Web.UI.Page
+    public partial class GuvenliCikis : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["uyeId"] ==null)
-            {
-                Response.Redirect("~/Login.aspx");
-            }
+            Session.Clear();
+            Session.Abandon();
+            Response.Redirect("~/Login.aspx");
         }
     }
 }
