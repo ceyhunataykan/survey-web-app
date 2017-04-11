@@ -121,10 +121,10 @@
     <Content Include="Admin\Hesap\GuvenliCikis.aspx" />
     <Content Include="Admin\Hesap\Parola.aspx" />
     <Content Include="Admin\Hesap\Profil.aspx" />
-    <Content Include="Admin\Kullanici\Ekle.aspx" />
-    <Content Include="Admin\Kullanici\Guncelle.aspx" />
-    <Content Include="Admin\Kullanici\Liste.aspx" />
-    <Content Include="Admin\Kullanici\Rol\Yonet.aspx" />
+    <Content Include="Admin\Uye\Ekle.aspx" />
+    <Content Include="Admin\Uye\Guncelle.aspx" />
+    <Content Include="Admin\Uye\Liste.aspx" />
+    <Content Include="Admin\Uye\Rol\Yonet.aspx" />
     <Content Include="Admin\Rapor\Analiz.aspx" />
     <Content Include="Admin\Rapor\Rapor.aspx" />
     <Content Include="Content\anketp-logo-big.png" />
@@ -203,6 +203,13 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <Content Include="User\Anket.aspx" />
+    <Content Include="User\Dashboard.aspx" />
+    <Content Include="User\Hesap\Email.aspx" />
+    <Content Include="User\Hesap\GuvenliCikis.aspx" />
+    <Content Include="User\Hesap\Parola.aspx" />
+    <Content Include="User\Hesap\Profil.aspx" />
+    <Content Include="User\User.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -336,32 +343,32 @@
     <Compile Include="Admin\Hesap\Profil.aspx.designer.cs">
       <DependentUpon>Profil.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Kullanici\Ekle.aspx.cs">
+    <Compile Include="Admin\Uye\Ekle.aspx.cs">
       <DependentUpon>Ekle.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Kullanici\Ekle.aspx.designer.cs">
+    <Compile Include="Admin\Uye\Ekle.aspx.designer.cs">
       <DependentUpon>Ekle.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Kullanici\Guncelle.aspx.cs">
+    <Compile Include="Admin\Uye\Guncelle.aspx.cs">
       <DependentUpon>Guncelle.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Kullanici\Guncelle.aspx.designer.cs">
+    <Compile Include="Admin\Uye\Guncelle.aspx.designer.cs">
       <DependentUpon>Guncelle.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Kullanici\Liste.aspx.cs">
+    <Compile Include="Admin\Uye\Liste.aspx.cs">
       <DependentUpon>Liste.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Kullanici\Liste.aspx.designer.cs">
+    <Compile Include="Admin\Uye\Liste.aspx.designer.cs">
       <DependentUpon>Liste.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Kullanici\Rol\Yonet.aspx.cs">
+    <Compile Include="Admin\Uye\Rol\Yonet.aspx.cs">
       <DependentUpon>Yonet.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Kullanici\Rol\Yonet.aspx.designer.cs">
+    <Compile Include="Admin\Uye\Rol\Yonet.aspx.designer.cs">
       <DependentUpon>Yonet.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Rapor\Analiz.aspx.cs">
@@ -460,6 +467,55 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User\Anket.aspx.cs">
+      <DependentUpon>Anket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Anket.aspx.designer.cs">
+      <DependentUpon>Anket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Hesap\Email.aspx.cs">
+      <DependentUpon>Email.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Hesap\Email.aspx.designer.cs">
+      <DependentUpon>Email.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Hesap\GuvenliCikis.aspx.cs">
+      <DependentUpon>GuvenliCikis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Hesap\GuvenliCikis.aspx.designer.cs">
+      <DependentUpon>GuvenliCikis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Hesap\Parola.aspx.cs">
+      <DependentUpon>Parola.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Hesap\Parola.aspx.designer.cs">
+      <DependentUpon>Parola.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\Hesap\Profil.aspx.cs">
+      <DependentUpon>Profil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\Hesap\Profil.aspx.designer.cs">
+      <DependentUpon>Profil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User\User.Master.cs">
+      <DependentUpon>User.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User\User.Master.designer.cs">
+      <DependentUpon>User.Master</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

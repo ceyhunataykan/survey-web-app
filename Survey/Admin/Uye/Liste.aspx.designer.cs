@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Survey.Admin.Kullanici {
+namespace Survey.Admin.Uye {
     
     
     public partial class Liste {

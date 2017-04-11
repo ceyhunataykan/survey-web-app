@@ -27,8 +27,16 @@ namespace Survey
                 {
                     Session["uyeId"] = sorgu.Kullanici_ID;
                     Session["uyeKadi"] = sorgu.Kullanici_Adi;
-                    Session["uyeAdmin"] = sorgu.Rol.Rol_Adi;
-                    Response.Redirect("~/Admin/Dashboard.aspx");
+                    sorgu.Son_Giris_Tarihi = DateTime.Now;
+                    db.SaveChanges();
+                    if (sorgu.Rol_ID == 1)
+                    {
+                        Response.Redirect("~/Admin/Dashboard.aspx");
+                    }
+                    if (sorgu.Rol_ID == 2)
+                    {
+                        Response.Redirect("~/User/Dashboard.aspx");
+                    }
                 }
                 else
                 {

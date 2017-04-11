@@ -13,6 +13,10 @@ namespace Survey.Admin.Anket
         AnketEntities1 db = new AnketEntities1();
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["uyeId"] == null)
+            {
+                Response.Redirect("~/Login.aspx");
+            }
             if (IsPostBack)
             {
                 return;

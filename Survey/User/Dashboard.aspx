@@ -1,30 +1,24 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="Liste.aspx.cs" Inherits="Survey.Admin.Kullanici.Liste" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/User/User.Master" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" Inherits="Survey.User.Dashboard" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <div class="row">
-        <div class="col-sm-12">
-            <a href="Ekle.aspx" id="btnAnketEkle" class="btn btn-info btn-block" style="height: 50px; font-size: 16px; font-weight: 500; font-family: 'Roboto', sans-serif;"><span class="glyphicon glyphicon-check"></span>&nbsp;&nbsp;Yeni Kullanıcı Oluştur</a>
-        </div>
-    </div>
     <div class="row" style="margin-top: 25px">
         <div class="col-sm-12">
             <div class="panel">
                 <div class="panel-heading" style="color: lightgray; background-color: dimgray;">
-                    <h3>Kullanıcı Listesi</h3>
+                    <h3>Anket Listesi</h3>
                 </div>
                 <div class="panel-body">
-                    <asp:ListView runat="server" ID="lvKullaniciListe">
+                    <asp:ListView runat="server" ID="lvAnketListe">
                         <LayoutTemplate>
                             <div class="table-responsive">
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
-                                            <th class="text-center">Kullanıcı Adı</th>
-                                            <th class="text-center">Email</th>
-                                            <th class="text-center">Kullanıcı Tipi</th>
-                                            <th class="text-center">Kayıt Tarihi</th>
-                                            <th class="text-center">Son Giriş Tarihi</th>
+                                            <th>Anket Adı</th>
+                                            <th class="text-center">Başlangıç Tarihi</th>
+                                            <th class="text-center">Bitiş Tarihi</th>
+                                            <th class="text-center">Soru Sayısı</th>
                                             <th class="text-center">Durum</th>
                                             <th class="text-center">İşlemler</th>
                                         </tr>
@@ -37,15 +31,13 @@
                         </LayoutTemplate>
                         <ItemTemplate>
                             <tr>
-                                <td class="text-center"><%# Eval("Kullanici_Adi") %></td>
-                                <td class="text-center"><%# Eval("Kullanici_Email") %></td>
-                                <td class="text-center"><%# Eval("Rol_ID") %></td>
-                                <td class="text-center"><%# Eval("Kayıt_Tarihi","{0:d}") %></td>
-                                <td class="text-center"><%# Eval("Son_Giris_Tarihi","{0:d}") %></td>
-                                <%# (bool)Eval("Durum")==true ? "<td class="+ "\"text-center\""+"><span class="+ "\"label label-success\""+">Aktif</span></td>" : "<td class="+ "\"text-center\""+"><span class="+"\"label label-danger\""+">Pasif</span></td>" %>
+                                <td><a href="Soru/Liste.aspx?anket-id=<%# Eval("Anket_ID") %>" style="color:dimgray; font-size:12px; font-weight:bold"><%# Eval("Anket_Adi") %></a></td>
+                                <td class="text-center"><%# Eval("basTarih","{0:d}") %></td>
+                                <td class="text-center"><%# Eval("bitTarih","{0:d}") %></td>
+                                <td class="text-center"><%# Eval("Soru_Sayi") %></td>
+                                <%# (bool)Eval("Anket_Durum")==true ? "<td class="+ "\"text-center\""+"><span class="+ "\"label label-success\""+">Aktif</span></td>" : "<td class="+ "\"text-center\""+"><span class="+"\"label label-danger\""+">Pasif</span></td>" %>
                                 <td class="text-center">
-                                    <a href="Guncelle.aspx?kullanici-id=<%# Eval("Kullanici_ID") %>" class="btn btn-xs btn-info" data-toggle="tooltip" data-placement="top" title="Düzenle">Düzenle</a>
-                                    <asp:Button ID="btnSil" Text="Sil" CssClass="btn btn-xs btn-danger" data-toggle="tooltip" data-placement="top" title="Sil" CommandArgument='<%# Eval("Kullanici_ID") %>' CommandName="Sil" OnCommand="btnSil_Command" runat="server" />
+                                    <a href="Anket.aspx?anket-id=<%# Eval("Anket_ID") %>" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Önizleme">Anket Doldur</a>
                                 </td>
                             </tr>
                         </ItemTemplate>

@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Survey.Admin.Rapor
+namespace Survey.Admin.Uye
 {
-    public partial class Analiz : System.Web.UI.Page
+    public partial class Guncelle : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

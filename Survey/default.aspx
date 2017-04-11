@@ -56,7 +56,7 @@
                         <li><a href="#contact">İletişim</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="user/kullanicipaneli.aspx"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Kullanıcı Paneli</a></li>
+                        <li><a href="Login.aspx"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Kullanıcı Paneli</a></li>
                     </ul>
                 </div>
             </div>

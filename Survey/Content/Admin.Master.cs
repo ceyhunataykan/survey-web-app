@@ -5,16 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Survey.Admin.Rapor
+namespace Survey.Admin
 {
-    public partial class Analiz : System.Web.UI.Page
+    public partial class Admin : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["uyeId"] == null)
-            {
-                Response.Redirect("~/Login.aspx");
-            }
+
         }
     }
 }

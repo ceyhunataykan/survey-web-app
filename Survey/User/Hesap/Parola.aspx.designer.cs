@@ -7,90 +7,63 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Survey.Admin.Kullanici {
+namespace Survey.User.Hesap {
     
     
-    public partial class Ekle {
+    public partial class Parola {
         
         /// <summary>
-        /// txtKullanici control.
+        /// txtMevcutParola control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtKullanici;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword txtMevcutParola;
         
         /// <summary>
-        /// txtParola control.
+        /// txtYeniParola control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtParola;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword txtYeniParola;
         
         /// <summary>
-        /// txtParolaTek control.
+        /// txtYeniParolaTek control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtParolaTek;
+        protected global::System.Web.UI.HtmlControls.HtmlInputPassword txtYeniParolaTek;
         
         /// <summary>
-        /// txtEmail control.
+        /// btnVazgec control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtEmail;
+        protected global::System.Web.UI.WebControls.Button btnVazgec;
         
         /// <summary>
-        /// kullaniciTip control.
+        /// btnDegistir control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList kullaniciTip;
+        protected global::System.Web.UI.WebControls.Button btnDegistir;
         
         /// <summary>
-        /// kullaniciDurum control.
+        /// sonuc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList kullaniciDurum;
-        
-        /// <summary>
-        /// btnIptal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnIptal;
-        
-        /// <summary>
-        /// btnKaydet control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnKaydet;
-        
-        /// <summary>
-        /// Mesaj control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Mesaj;
+        protected global::System.Web.UI.WebControls.Label sonuc;
     }
 }
