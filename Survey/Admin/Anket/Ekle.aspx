@@ -38,8 +38,8 @@
                         <div class="form-group">
                             <label class="col-sm-4 control-label"></label>
                             <div class="col-md-6">
-                                <asp:Button Text="Vazgeç" ID="btnIptal" CssClass="btn btn-danger" OnClick="btnIptal_Click" runat="server" />
-                                <asp:Button Text="Kaydet" ID="btnKaydet" CssClass="btn btn-success" OnClick="btnKaydet_Click" runat="server" />
+                                <asp:Button Text="Vazgeç" ID="btnIptal" CssClass="btn btn-danger btn-lg" OnClick="btnIptal_Click" runat="server" />
+                                <asp:Button Text="Kaydet" ID="btnKaydet" CssClass="btn btn-success btn-lg" OnClick="btnKaydet_Click" runat="server" />
                             </div>
                         </div>
                         <br />

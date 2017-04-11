@@ -10,34 +10,34 @@
 namespace Survey.Admin.Hesap {
     
     
-    public partial class Parola {
+    public partial class Email {
         
         /// <summary>
-        /// txtMevcutParola control.
+        /// txtMevcutEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword txtMevcutParola;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtMevcutEmail;
         
         /// <summary>
-        /// txtYeniParola control.
+        /// txtYeniEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword txtYeniParola;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtYeniEmail;
         
         /// <summary>
-        /// txtYeniParolaTek control.
+        /// txtYeniEmailTek control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputPassword txtYeniParolaTek;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtYeniEmailTek;
         
         /// <summary>
         /// btnVazgec control.

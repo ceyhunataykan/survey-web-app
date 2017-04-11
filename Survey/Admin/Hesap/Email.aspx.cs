@@ -5,9 +5,10 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Survey.Models;
+
 namespace Survey.Admin.Hesap
 {
-    public partial class Parola : System.Web.UI.Page
+    public partial class Email : System.Web.UI.Page
     {
         AnketEntities1 db = new AnketEntities1();
         int id;
@@ -21,8 +22,8 @@ namespace Survey.Admin.Hesap
 
             if (!IsPostBack)
             {
-                ViewState["SonSayfa"] = Request.UrlReferrer;        
-            }          
+                ViewState["SonSayfa"] = Request.UrlReferrer;
+            }
         }
 
         protected void btnVazgec_Click(object sender, EventArgs e)
@@ -36,27 +37,27 @@ namespace Survey.Admin.Hesap
         protected void btnDegistir_Click(object sender, EventArgs e)
         {
             var sorgu = db.Kullanici.Where(k => k.Kullanici_ID == id).FirstOrDefault();
-            if (sorgu.Kullanici_Parola != txtMevcutParola.Value.ToString())
+            if (sorgu.Kullanici_Email != txtMevcutEmail.Value.ToString())
             {
-                sonuc.Text = "Mevcut Parola Hatalı!";
+                sonuc.Text = "Mevcut Email Hatalı!";
                 sonuc.CssClass = "col-md-6 alert alert-danger";
                 ClientScript.RegisterStartupScript(this.GetType(), "HideLabel", "<script type=\"text/javascript\">setTimeout(\"document.getElementById('" + sonuc.ClientID + "').style.display='none'\",4000)</script>");
                 return;
             }
             else
             {
-                if (txtYeniParola.Value.ToString() != txtYeniParolaTek.Value.ToString())
+                if (txtYeniEmail.Value.ToString() != txtYeniEmailTek.Value.ToString())
                 {
-                    sonuc.Text = "Parolalar Eşleşmiyor!";
+                    sonuc.Text = "Email Adresleri Eşleşmiyor!";
                     sonuc.CssClass = "col-md-6 alert alert-danger";
                     ClientScript.RegisterStartupScript(this.GetType(), "HideLabel", "<script type=\"text/javascript\">setTimeout(\"document.getElementById('" + sonuc.ClientID + "').style.display='none'\",4000)</script>");
                     return;
                 }
                 else
                 {
-                    sorgu.Kullanici_Parola = txtYeniParolaTek.Value.ToString();
+                    sorgu.Kullanici_Parola = txtYeniEmailTek.Value.ToString();
                     db.SaveChanges();
-                    sonuc.Text = "Parola Değiştirme Başarılı";
+                    sonuc.Text = "Email Değiştirme Başarılı";
                     sonuc.CssClass = "col-md-6 alert alert-success";
                     ClientScript.RegisterStartupScript(this.GetType(), "HideLabel", "<script type=\"text/javascript\">setTimeout(\"document.getElementById('" + sonuc.ClientID + "').style.display='none'\",4000)</script>");
                 }

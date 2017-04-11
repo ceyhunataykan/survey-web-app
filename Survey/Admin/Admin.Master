@@ -35,9 +35,9 @@
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user fa"></i>&nbsp;&nbsp;&nbsp;<%= Session["uyeKadi"] %></a>
                             <ul class="dropdown-menu">
-                                <li><a href="profil.aspx">Profil</a></li>
+                                <li><a href="/Admin/Hesap/Profil.aspx">Profil</a></li>
                                 <li><a href="/Admin/Hesap/Parola.aspx">Parola Değiştir</a></li>
-                                <li><a runat="server" id="btnKapat" href="~/Admin/Hesap/GuvenliCikis.aspx">Güvenli Çıkış</a></li>
+                                <li><a runat="server" id="btnKapat" href="/Admin/Hesap/GuvenliCikis.aspx">Güvenli Çıkış</a></li>
                             </ul>
                         </li>
                     </ul>

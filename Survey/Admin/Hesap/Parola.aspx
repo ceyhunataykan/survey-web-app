@@ -12,19 +12,19 @@
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Mevcut Parola</label>
                             <div class="col-sm-6">
-                                <input id="txtMevcutParola" name="txtMevcutParola" class="form-control" type="password" />
+                                <input runat="server" id="txtMevcutParola" name="txtMevcutParola" class="form-control" type="password" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Yeni Parola</label>
                             <div class="col-sm-6">
-                                <input id="txtYeniParola" name="txtYeniParola" class="form-control" type="password" />
+                                <input runat="server" id="txtYeniParola" name="txtYeniParola" class="form-control" type="password" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Yeni Parola Tekrar</label>
                             <div class="col-sm-6">
-                                <input id="txtYeniParolaTek" name="txtYeniParolaTek" class="form-control" type="password" />
+                                <input runat="server" id="txtYeniParolaTek" name="txtYeniParolaTek" class="form-control" type="password" />
                             </div>
                         </div>
                         <div class="form-group">
@@ -34,10 +34,10 @@
                                 <asp:Button Text="Değiştir" ID="btnDegistir" CssClass="btn btn-success btn-lg" OnClick="btnDegistir_Click" runat="server" />
                             </div>
                         </div>
+                        <br />
                         <div class="form-group">
                             <label class="col-sm-4 control-label"></label>
-                            <div id="sonuc" class="col-md-6">
-                            </div>
+                            <asp:Label ID="sonuc" Text="" runat="server" />
                         </div>
                     </fieldset>
                 </div>

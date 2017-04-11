@@ -117,6 +117,7 @@
     <Content Include="Admin\Anket\Soru\Liste.aspx" />
     <Content Include="Admin\Anket\Soru\Secenek\Liste.aspx" />
     <Content Include="Admin\Dashboard.aspx" />
+    <Content Include="Admin\Hesap\Email.aspx" />
     <Content Include="Admin\Hesap\GuvenliCikis.aspx" />
     <Content Include="Admin\Hesap\Parola.aspx" />
     <Content Include="Admin\Hesap\Profil.aspx" />
@@ -306,6 +307,13 @@
     </Compile>
     <Compile Include="Admin\Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Hesap\Email.aspx.cs">
+      <DependentUpon>Email.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Hesap\Email.aspx.designer.cs">
+      <DependentUpon>Email.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Hesap\GuvenliCikis.aspx.cs">
       <DependentUpon>GuvenliCikis.aspx</DependentUpon>
