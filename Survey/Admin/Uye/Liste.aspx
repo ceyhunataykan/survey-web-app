@@ -10,8 +10,8 @@
     <div class="row" style="margin-top: 25px">
         <div class="col-sm-12">
             <div class="panel">
-                <div class="panel-heading" style="color: lightgray; background-color: dimgray;">
-                    <h3>Kullanıcı Listesi</h3>
+                <div class="panel-heading" style="color: white; background-color: dimgray;">
+                    <h3>Üye Listesi</h3>
                 </div>
                 <div class="panel-body">
                     <asp:ListView runat="server" ID="lvKullaniciListe">

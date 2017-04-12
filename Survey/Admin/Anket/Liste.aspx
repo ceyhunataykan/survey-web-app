@@ -13,10 +13,10 @@
             <a href="Ekle.aspx" id="btnAnketEkle" class="btn btn-info btn-block" style="height: 50px; font-size: 16px; font-weight: 500; font-family: 'Roboto', sans-serif;"><span class="glyphicon glyphicon-check"></span>&nbsp;&nbsp;Yeni Anket Oluştur</a>
         </div>
     </div>
-    <div class="row" style="margin-top: 25px">
+    <div class="row" style="margin-top: 15px">
         <div class="col-sm-12">
             <div class="panel">
-                <div class="panel-heading" style="color: lightgray; background-color: dimgray;">
+                <div class="panel-heading" style="color: white; background-color: dimgray;">
                     <h3>Anket Listesi</h3>
                 </div>
                 <div class="panel-body">
@@ -31,6 +31,7 @@
                                             <th class="text-center">Bitiş Tarihi</th>
                                             <th class="text-center">Soru Sayısı</th>
                                             <th class="text-center">Durum</th>
+                                            <th class="text-center">Araçlar</th>
                                             <th class="text-center">İşlemler</th>
                                         </tr>
                                     </thead>
@@ -50,7 +51,10 @@
                                 <td class="text-center">
                                     <a href="Soru/Liste.aspx?anket-id=<%# Eval("Anket_ID") %>" class="btn btn-xs btn-success" data-toggle="tooltip" data-placement="top" title="Soru Ekle">Sorular</a>
                                     <a href="Onizleme.aspx?anket-id=<%# Eval("Anket_ID") %>" class="btn btn-xs btn-primary" data-toggle="tooltip" data-placement="top" title="Önizleme">Önizleme</a>
-                                    <a href="#" class="btn btn-xs btn-primary" data-toggle="tooltip" data-placement="top" title="Rapor">Rapor</a>
+                                    <a href="qrkod.aspx?anket-id=<%# Eval("Anket_ID") %>" class="btn btn-xs btn-primary" data-toggle="tooltip" data-placement="top" title="QR Kod Oluştur">QR Kod</a>
+                                    <a href="#" class="btn btn-xs btn-primary" data-toggle="tooltip" data-placement="top" title="Rapor">Analiz</a>
+                                </td>
+                                <td class="text-center"> 
                                     <a href="Guncelle.aspx?anket-id=<%# Eval("Anket_ID") %>" class="btn btn-xs btn-info" data-toggle="tooltip" data-placement="top" title="Düzenle">Düzenle</a>
                                     <asp:Button ID="btnSil" Text="Sil" CssClass="btn btn-xs btn-danger" data-toggle="tooltip" data-placement="top" title="Sil" CommandArgument='<%# Eval("Anket_ID") %>' CommandName="Sil" OnCommand="btnSil_Command" runat="server" />
                                 </td>

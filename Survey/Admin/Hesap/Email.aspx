@@ -13,19 +13,19 @@
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Mevcut Email</label>
                             <div class="col-sm-6">
-                                <input runat="server" id="txtMevcutEmail" name="txtMevcutEmail" class="form-control" type="text" />
+                                <input runat="server" id="txtMevcutEmail" name="txtMevcutEmail" class="form-control" type="email" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Yeni Email</label>
                             <div class="col-sm-6">
-                                <input runat="server" id="txtYeniEmail" name="txtYeniEmail" class="form-control" type="text" />
+                                <input runat="server" id="txtYeniEmail" name="txtYeniEmail" class="form-control" type="email" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Yeni Email Tekrar</label>
                             <div class="col-sm-6">
-                                <input runat="server" id="txtYeniEmailTek" name="txtYeniEmailTek" class="form-control" type="text" />
+                                <input runat="server" id="txtYeniEmailTek" name="txtYeniEmailTek" class="form-control" type="email" />
                             </div>
                         </div>
                         <div class="form-group">
@@ -48,52 +48,17 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="scripts" runat="server">
     <script>
-        $(function () {
-            $("#txtMevcutEmail").keyup(function () {
-                var txtMevcutEmail = $("#txtMevcutEmail").val();
-                if (mailDonen) {  // Fonksiyondan true ya da false ; dönen değere göre işlem yapıyoruz.
-                    $("#sonuc").html("Mail Formatı Uygun");
-                    $("#sonuc").removeClass();
-                    $("#sonuc").addClass("alert alert-success");
+        $(document).ready(function () {
+            $("input[name=txtMevcutEmail]").focusout(function () {
+                var mail = $(this).val();
+                var kontrol1 = mail.indexOf("@");
+                var kontrol2 = mail.lastIndexOf(".");
+                if (kontrol1 > 0 && kontrol2 > kontrol1 && kontrol1 < mail.length) {
+                    alert("E-Mail adresi geçerli");
                 } else {
-                    $("#sonuc").html("Mail Formatı Uygun Değil");
-                    $("#sonuc").removeClass();
-                    $("#sonuc").addClass("alert alert-danger");
+                    alert("E-Mail adresi geçersiz");
                 }
             });
-            $("#txtYeniEmail").keyup(function () {
-                var txtMevcutEmail = $("#txtYeniEmail").val();
-                if (mailDonen) {  // Fonksiyondan true ya da false ; dönen değere göre işlem yapıyoruz.
-                    $("#sonuc").html("Mail Formatı Uygun");
-                    $("#sonuc").removeClass();
-                    $("#sonuc").addClass("alert alert-success");
-                } else {
-                    $("#sonuc").html("Mail Formatı Uygun Değil");
-                    $("#sonuc").removeClass();
-                    $("#sonuc").addClass("alert alert-danger");
-                }
-            });
-            $("#txtYeniEmailTek").keyup(function () {
-                var txtMevcutEmail = $("#txtYeniEmailTek").val();
-                if (mailDonen) {  // Fonksiyondan true ya da false ; dönen değere göre işlem yapıyoruz.
-                    $("#sonuc").html("Mail Formatı Uygun");
-                    $("#sonuc").removeClass();
-                    $("#sonuc").addClass("alert alert-success");
-                } else {
-                    $("#sonuc").html("Mail Formatı Uygun Değil");
-                    $("#sonuc").removeClass();
-                    $("#sonuc").addClass("alert alert-danger");
-                }
-            });
-            function checkEmail(email) {
-                var filter = /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
-                if (!filter.test(email)) {
-                    return false;
-                }
-                else {
-                    return true;
-                }
-            }
         });
     </script>
 </asp:Content>

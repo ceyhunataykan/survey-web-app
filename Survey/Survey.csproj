@@ -51,6 +51,9 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MessagingToolkit.QRCode, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MessagingToolkit.QRCode.1.3.0\lib\MessagingToolkit.QRCode.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.7\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -88,6 +91,9 @@
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="QRCoder, Version=1.2.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.2.6\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -106,12 +112,16 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.2.6\lib\net40\UnityEngine.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\Anket\Ekle.aspx" />
     <Content Include="Admin\Anket\Guncelle.aspx" />
     <Content Include="Admin\Anket\Liste.aspx" />
     <Content Include="Admin\Anket\Onizleme.aspx" />
+    <Content Include="Admin\Anket\qrkod.aspx" />
     <Content Include="Admin\Anket\Soru\Ekle.aspx" />
     <Content Include="Admin\Anket\Soru\Guncelle.aspx" />
     <Content Include="Admin\Anket\Soru\Liste.aspx" />
@@ -163,6 +173,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="QRCoder.dll" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="Admin\Admin.Master" />
@@ -279,6 +290,13 @@
     </Compile>
     <Compile Include="Admin\Anket\Onizleme.aspx.designer.cs">
       <DependentUpon>Onizleme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Anket\qrkod.aspx.cs">
+      <DependentUpon>qrkod.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Anket\qrkod.aspx.designer.cs">
+      <DependentUpon>qrkod.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Anket\Soru\Ekle.aspx.cs">
       <DependentUpon>Ekle.aspx</DependentUpon>

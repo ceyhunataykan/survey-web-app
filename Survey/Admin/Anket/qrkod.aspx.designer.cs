@@ -7,63 +7,45 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Survey.Admin.Hesap {
+namespace Survey.Admin.Anket {
     
     
-    public partial class Email {
+    public partial class qrkod {
         
         /// <summary>
-        /// txtMevcutEmail control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtMevcutEmail;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// txtYeniEmail control.
+        /// hata control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtYeniEmail;
+        protected global::System.Web.UI.WebControls.Label hata;
         
         /// <summary>
-        /// txtYeniEmailTek control.
+        /// panelQr control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtYeniEmailTek;
+        protected global::System.Web.UI.WebControls.Panel panelQr;
         
         /// <summary>
-        /// btnVazgec control.
+        /// qrResim control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnVazgec;
-        
-        /// <summary>
-        /// btnDegistir control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnDegistir;
-        
-        /// <summary>
-        /// sonuc control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label sonuc;
+        protected global::System.Web.UI.WebControls.Image qrResim;
     }
 }

@@ -8,7 +8,7 @@
             <div class="well">
                 <div class="form-horizontal">
                     <fieldset>
-                        <legend>Kullanıcı Ekle</legend>
+                        <legend>Üye Ekle</legend>
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Kullanıcı Adı</label>
                             <div class="col-sm-6">

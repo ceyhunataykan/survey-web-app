@@ -34,6 +34,6 @@ namespace Survey.Admin.Anket
             db.Anketler.Remove(sil);
             db.SaveChanges();
             Response.Redirect("Liste.aspx");
-        }
+        }   
     }
 }
