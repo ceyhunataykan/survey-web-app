@@ -13,11 +13,11 @@
             <asp:Label ID="hata" Text="" runat="server" />
             <asp:Panel runat="server" ID="panelQr" Visible="false">
                 <div class="row">
-                    <div class="col-md-2 text-center">
-                        <asp:Image ID="qrResim" runat="server" />
+                    <div class="col-md-12 text-center">
+                        <h2>Kodu Kullanarak Ankete Katılabilirsiniz.</h2>
                     </div>
-                    <div class="col-md-10 text-center">
-                        <h2>Yandaki Kodu Kullanarak Ankete Katılabilirsiniz.</h2>
+                    <div class="col-md-12 text-center" style="margin-top:25px;">
+                        <asp:Image ID="qrResim" runat="server" />
                     </div>
                 </div>
             </asp:Panel>

@@ -13,6 +13,8 @@ namespace Survey.Admin.Anket.Soru.Secenek
         AnketEntities1 db = new AnketEntities1();
         protected void Page_Load(object sender, EventArgs e)
         {
+            surveyApp.loginKontrol();
+
             if (string.IsNullOrEmpty(Request.QueryString["soru-id"]))
             {
                 Response.Redirect("/Admin/Dashboard.aspx");
@@ -21,8 +23,8 @@ namespace Survey.Admin.Anket.Soru.Secenek
             {
                 return;
             }
-            test.soruid = Convert.ToInt32(Request.QueryString["soru-id"]);
-            lvSecenekListe.DataSource = db.Secenekler.Where(s => s.Soru_ID == test.soruid).ToList();
+            surveyApp.soruid = Convert.ToInt32(Request.QueryString["soru-id"]);
+            lvSecenekListe.DataSource = db.Secenekler.Where(s => s.Soru_ID == surveyApp.soruid).ToList();
             lvSecenekListe.DataBind();
         }
 
@@ -39,11 +41,11 @@ namespace Survey.Admin.Anket.Soru.Secenek
             {
                 Secenekler Ekle = new Secenekler();
                 Ekle.Secenek_Adi = txtSecenek.Text.Trim();
-                Ekle.Soru_ID = test.soruid;
+                Ekle.Soru_ID = surveyApp.soruid;
                 db.Secenekler.Add(Ekle);
                 db.SaveChanges();
                 txtSecenek.Text = "";
-                lvSecenekListe.DataSource = db.Secenekler.Where(s => s.Soru_ID == test.soruid).ToList();
+                lvSecenekListe.DataSource = db.Secenekler.Where(s => s.Soru_ID == surveyApp.soruid).ToList();
                 lvSecenekListe.DataBind();
                 Mesaj.Text = "Seçenek Oluşturuldu.";
                 Mesaj.CssClass = "alert alert-success";
@@ -58,14 +60,14 @@ namespace Survey.Admin.Anket.Soru.Secenek
             var sil = db.Secenekler.Where(s => s.Secenek_ID == sID).FirstOrDefault();
             db.Secenekler.Remove(sil);
             db.SaveChanges();
-            lvSecenekListe.DataSource = db.Secenekler.Where(s => s.Soru_ID == test.soruid).ToList();
+            lvSecenekListe.DataSource = db.Secenekler.Where(s => s.Soru_ID == surveyApp.soruid).ToList();
             lvSecenekListe.DataBind();
             
         }
 
         protected void btnIptal_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Admin/Anket/Soru/Liste.aspx?anket-id=" + test.anketid);
+            Response.Redirect("/Admin/Anket/Soru/Liste.aspx?anket-id=" + surveyApp.anketid);
         }
     }
 }

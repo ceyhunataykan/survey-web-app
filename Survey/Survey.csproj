@@ -173,7 +173,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="QRCoder.dll" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="Admin\Admin.Master" />
@@ -466,6 +465,7 @@
     <Compile Include="Signup.aspx.designer.cs">
       <DependentUpon>Signup.aspx</DependentUpon>
     </Compile>
+    <Compile Include="surveyApp.cs" />
     <Compile Include="test.cs" />
     <Compile Include="default.aspx.cs">
       <DependentUpon>default.aspx</DependentUpon>

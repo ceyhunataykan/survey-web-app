@@ -14,10 +14,8 @@ namespace Survey.Admin.Hesap
         int id;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["uyeID"] == null)
-            {
-                Response.Redirect("~/Login.aspx");
-            }
+            surveyApp.loginKontrol();
+
             id = Convert.ToInt32(Session["uyeId"].ToString());
 
             if (!IsPostBack)

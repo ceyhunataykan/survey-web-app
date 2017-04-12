@@ -11,10 +11,7 @@ namespace Survey.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["uyeId"] ==null)
-            {
-                Response.Redirect("~/Login.aspx");
-            }
+            surveyApp.loginKontrol();
         }
     }
 }

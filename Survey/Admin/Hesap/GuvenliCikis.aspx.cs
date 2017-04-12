@@ -11,6 +11,8 @@ namespace Survey.Admin.Hesap
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            surveyApp.loginKontrol();
+
             Session.Clear();
             Session.Abandon();
             Response.Redirect("~/Login.aspx");

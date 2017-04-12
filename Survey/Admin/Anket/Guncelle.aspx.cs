@@ -13,10 +13,8 @@ namespace Survey.Admin.Anket
         AnketEntities1 db = new AnketEntities1();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["uyeId"] == null)
-            {
-                Response.Redirect("~/Login.aspx");
-            }
+            surveyApp.loginKontrol();
+
             if (IsPostBack)
             {
                 return;
@@ -25,9 +23,9 @@ namespace Survey.Admin.Anket
             {
                 Response.Redirect("Liste.aspx");
             }
-            test.anketid = Convert.ToInt32(Request.QueryString["anket-id"]);
+            surveyApp.anketid = Convert.ToInt32(Request.QueryString["anket-id"]);
 
-            var getir = db.Anketler.Where(a => a.Anket_ID == test.anketid).FirstOrDefault();
+            var getir = db.Anketler.Where(a => a.Anket_ID == surveyApp.anketid).FirstOrDefault();
             txtAnketAd.Text = getir.Anket_Adi;
             txtBaslangicTarih.Text = Convert.ToString(getir.Anket_Baslangic_Tarih);
             txtBitisTarih.Text = Convert.ToString(getir.Anket_Bitis_Tarih);
@@ -52,7 +50,7 @@ namespace Survey.Admin.Anket
             }
             else
             {
-                Anketler guncelle = db.Anketler.Where(a => a.Anket_ID == test.anketid).FirstOrDefault();
+                Anketler guncelle = db.Anketler.Where(a => a.Anket_ID == surveyApp.anketid).FirstOrDefault();
                 guncelle.Anket_Adi = txtAnketAd.Text.Trim();
                 guncelle.Anket_Baslangic_Tarih = Convert.ToDateTime(txtBaslangicTarih.Text);
                 guncelle.Anket_Bitis_Tarih = Convert.ToDateTime(txtBitisTarih.Text);

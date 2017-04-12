@@ -13,6 +13,8 @@ namespace Survey.Admin.Anket.Soru
         AnketEntities1 db = new AnketEntities1();
         protected void Page_Load(object sender, EventArgs e)
         {
+            surveyApp.loginKontrol();
+
             if (string.IsNullOrEmpty(Request.QueryString["anket-id"]))
             {
                 Response.Redirect("/Admin/Dashboard.aspx");
@@ -21,8 +23,8 @@ namespace Survey.Admin.Anket.Soru
             {
                 return;
             }
-            test.anketid = Convert.ToInt32(Request.QueryString["anket-id"]);
-            lvSoruListe.DataSource = db.Sorular.Where(s => s.Anket_ID == test.anketid).ToList();
+            surveyApp.anketid = Convert.ToInt32(Request.QueryString["anket-id"]);
+            lvSoruListe.DataSource = db.Sorular.Where(s => s.Anket_ID == surveyApp.anketid).ToList();
             lvSoruListe.DataBind();
         }
 
@@ -42,7 +44,7 @@ namespace Survey.Admin.Anket.Soru
             Sorular sil = db.Sorular.Where(s => s.Soru_ID == id).FirstOrDefault();
             db.Sorular.Remove(sil);
             db.SaveChanges();
-            Response.Redirect("Liste.aspx?anket-id=" + test.anketid);
+            Response.Redirect("Liste.aspx?anket-id=" + surveyApp.anketid);
         }
     }
 }

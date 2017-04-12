@@ -13,6 +13,8 @@ namespace Survey.Admin.Anket.Soru
         AnketEntities1 db = new AnketEntities1();
         protected void Page_Load(object sender, EventArgs e)
         {
+            surveyApp.loginKontrol();
+
             if (IsPostBack)
             {
                 return;
@@ -32,7 +34,7 @@ namespace Survey.Admin.Anket.Soru
             {
                 Sorular Ekle = new Sorular();
                 Ekle.Soru_Baslik = txtSoruAd.Text.Trim();
-                Ekle.Anket_ID = test.anketid;
+                Ekle.Anket_ID = surveyApp.anketid;
                 Ekle.Soru_Tipi = Convert.ToInt32(ddlSoruTipi.SelectedValue);
                 Ekle.Soru_Olusturma_Tarih = DateTime.Parse(DateTime.Now.ToShortDateString());
                 if (rbZorunlu.SelectedValue == "1")
@@ -49,13 +51,13 @@ namespace Survey.Admin.Anket.Soru
                 Mesaj.CssClass = "alert alert-success";
                 ClientScript.RegisterStartupScript(this.GetType(), "HideLabel", "<script type=\"text/javascript\">setTimeout(\"document.getElementById('" + Mesaj.ClientID + "').style.display='none'\",4000)</script>");
 
-                Response.Redirect("Liste.aspx?anket-id=" + test.anketid);
+                Response.Redirect("Liste.aspx?anket-id=" + surveyApp.anketid);
             }
         }
 
         protected void btnIptal_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Liste.aspx?anket-id=" + test.anketid);
+            Response.Redirect("Liste.aspx?anket-id=" + surveyApp.anketid);
         }
     }
 }

@@ -7,7 +7,7 @@ namespace Survey
 {
     public class test
     {
-        public static int anketid;
-        public static int soruid;
+        //public static int anketid;
+        //public static int soruid;
     }
 }

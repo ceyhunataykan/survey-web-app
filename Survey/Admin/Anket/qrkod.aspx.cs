@@ -23,7 +23,7 @@ namespace Survey.Admin.Anket
             }
             panelQr.Visible = true;
             string id = Request.QueryString["anket-id"].ToString();
-            string link = "http://localhost/Admin/Anket/Onizleme.aspx?anket-id=" + id;
+            string link = "http://localhost:59848/Admin/Anket/Onizleme.aspx?anket-id=" + id;
             QRCodeEncoder encoder = new QRCodeEncoder();
             Bitmap resim = encoder.Encode(link);
             qrResim.Height = 150;

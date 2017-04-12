@@ -14,10 +14,8 @@ namespace Survey.Admin.Anket
         AnketEntities1 db = new AnketEntities1();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["uyeId"] == null)
-            {
-                Response.Redirect("~/Login.aspx");
-            }
+            surveyApp.loginKontrol();
+
             if (string.IsNullOrEmpty(Request.QueryString["anket-id"]))
             {
                 Response.Redirect("/Admin/Dashboard.aspx");
@@ -26,20 +24,20 @@ namespace Survey.Admin.Anket
             {
                 return;
             }
-            
-            test.anketid = Convert.ToInt32(Request.QueryString["anket-id"]);
 
-            var bas = db.Sorular.Where(s => s.Anket_ID == test.anketid).FirstOrDefault();
+            surveyApp.anketid = Convert.ToInt32(Request.QueryString["anket-id"]);
+
+            var bas = db.Sorular.Where(s => s.Anket_ID == surveyApp.anketid).FirstOrDefault();
             lblBaslik.Text = bas.Anketler.Anket_Adi.ToString();
-            var soruListe = db.Sorular.Where(s => s.Anket_ID == test.anketid).ToList();
+            var soruListe = db.Sorular.Where(s => s.Anket_ID == surveyApp.anketid).ToList();
             rptListe.DataSource = soruListe;
             rptListe.DataBind();                        
         }
         protected void rptListe_ItemDataBound(object sender, RepeaterItemEventArgs e)
         {
             Literal ltSoruTipi = (Literal)e.Item.FindControl("ltSoruTipi");
-            test.soruid = Convert.ToInt32(DataBinder.Eval(e.Item.DataItem, "Soru_ID").ToString());
-            var secListe = db.Secenekler.Where(s => s.Soru_ID == test.soruid).ToList();
+            surveyApp.soruid = Convert.ToInt32(DataBinder.Eval(e.Item.DataItem, "Soru_ID").ToString());
+            var secListe = db.Secenekler.Where(s => s.Soru_ID == surveyApp.soruid).ToList();
             if (ltSoruTipi.Text == "1")
             {
                 RadioButtonList rbl = (RadioButtonList)e.Item.FindControl("rbSec");
@@ -81,7 +79,7 @@ namespace Survey.Admin.Anket
                     {
                         if (rbl.Items[j].Selected)
                         {
-                            Ekle.Anket_ID = test.anketid;
+                            Ekle.Anket_ID = surveyApp.anketid;
                             Ekle.Soru_ID = Convert.ToInt32(ltSoru_ID.Text);
                             Ekle.Secenek_ID = Convert.ToInt32(rbl.Items[j].Value.ToString());                         
                             db.Yanitlar.Add(Ekle);
@@ -96,7 +94,7 @@ namespace Survey.Admin.Anket
                     {
                         if (ckb.Items[j].Selected)
                         {
-                            Ekle.Anket_ID = test.anketid;
+                            Ekle.Anket_ID = surveyApp.anketid;
                             Ekle.Soru_ID = Convert.ToInt32(ltSoru_ID.Text);
                             Ekle.Secenek_ID = Convert.ToInt32(ckb.Items[j].Value.ToString());
                             db.Yanitlar.Add(Ekle);
@@ -105,7 +103,7 @@ namespace Survey.Admin.Anket
                     }
                 }
             }
-            Anketler anketKatilim = db.Anketler.Where(a => a.Anket_ID == test.anketid).FirstOrDefault();
+            Anketler anketKatilim = db.Anketler.Where(a => a.Anket_ID == surveyApp.anketid).FirstOrDefault();
             anketKatilim.Anket_Katilim = anketKatilim.Anket_Katilim + 1;
             db.SaveChanges();
             Response.Redirect("~/Admin/Dashboard.aspx");

@@ -13,6 +13,8 @@ namespace Survey.Admin.Anket.Soru
         AnketEntities1 db = new AnketEntities1();
         protected void Page_Load(object sender, EventArgs e)
         {
+            surveyApp.loginKontrol();
+
             if (IsPostBack)
             {
                 return;
@@ -21,9 +23,9 @@ namespace Survey.Admin.Anket.Soru
             {
                 Response.Redirect("Liste.aspx");
             }
-            test.soruid = Convert.ToInt32(Request.QueryString["soru-id"]);
+            surveyApp.soruid = Convert.ToInt32(Request.QueryString["soru-id"]);
 
-            var doldur = db.Sorular.Where(s => s.Soru_ID == test.soruid).FirstOrDefault();
+            var doldur = db.Sorular.Where(s => s.Soru_ID == surveyApp.soruid).FirstOrDefault();
             txtSoruAd.Text = doldur.Soru_Baslik;
             ddlSoruTipi.SelectedValue = doldur.Soru_Tipi.ToString();
             if (doldur.Soru_Durum == true)
@@ -43,9 +45,9 @@ namespace Survey.Admin.Anket.Soru
 
         protected void btnGuncelle_Click(object sender, EventArgs e)
         {
-            Sorular guncelle = db.Sorular.Where(s => s.Soru_ID == test.soruid).FirstOrDefault();
+            Sorular guncelle = db.Sorular.Where(s => s.Soru_ID == surveyApp.soruid).FirstOrDefault();
             guncelle.Soru_Baslik = txtSoruAd.Text.Trim();
-            guncelle.Anket_ID = test.anketid;
+            guncelle.Anket_ID = surveyApp.anketid;
             guncelle.Soru_Tipi = Convert.ToInt32(ddlSoruTipi.SelectedValue);
             guncelle.Soru_Guncelle_Tarih = DateTime.Parse(DateTime.Now.ToShortDateString());
             if (rbZorunlu.SelectedValue == "1")
@@ -61,7 +63,7 @@ namespace Survey.Admin.Anket.Soru
             Mesaj.CssClass = "alert alert-success";
             ClientScript.RegisterStartupScript(this.GetType(), "HideLabel", "<script type=\"text/javascript\">setTimeout(\"document.getElementById('" + Mesaj.ClientID + "').style.display='none'\",4000)</script>");
 
-            Response.Redirect("Liste.aspx?anket-id=" + test.anketid);
+            Response.Redirect("Liste.aspx?anket-id=" + surveyApp.anketid);
         }
     }
 }
