@@ -4,15 +4,18 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="AnketModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="AnketModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Anketler">
           <Key>
             <PropertyRef Name="Anket_ID" />
           </Key>
           <Property Name="Anket_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Anket_Adi" Type="nvarchar" MaxLength="150" />
-          <Property Name="Anket_Baslangic_Tarih" Type="date" />
-          <Property Name="Anket_Bitis_Tarih" Type="date" />
+          <Property Name="Anket_Basligi" Type="nvarchar" MaxLength="150" />
+          <Property Name="Anket_Aciklamasi" Type="nvarchar(max)" />
+          <Property Name="Anket_Olusturulma_Tarih" Type="datetime" />
+          <Property Name="Anket_Baslangic_Tarih" Type="datetime" />
+          <Property Name="Anket_Bitis_Tarih" Type="datetime" />
           <Property Name="Anket_Katilim" Type="int" />
           <Property Name="Anket_Durum" Type="bit" />
         </EntityType>
@@ -147,37 +150,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
-        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="version" Type="int" Mode="In" />
-          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
-        </Function>
-        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-        </Function>
-        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
-          <Parameter Name="owner_id" Type="int" Mode="In" />
-          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
-        </Function>
-        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="AnketModelStoreContainer">
           <EntitySet Name="Anketler" EntityType="Self.Anketler" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Kullanici" EntityType="Self.Kullanici" Schema="dbo" store:Type="Tables" />
@@ -211,8 +183,7 @@
             <End Role="Yanitlar" EntitySet="Yanitlar" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="AnketModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -222,12 +193,15 @@
           </Key>
           <Property Name="Anket_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Anket_Adi" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="Anket_Baslangic_Tarih" Type="DateTime" Precision="0" />
-          <Property Name="Anket_Bitis_Tarih" Type="DateTime" Precision="0" />
+          <Property Name="Anket_Baslangic_Tarih" Type="DateTime" Precision="3" />
+          <Property Name="Anket_Bitis_Tarih" Type="DateTime" Precision="3" />
           <Property Name="Anket_Katilim" Type="Int32" />
           <Property Name="Anket_Durum" Type="Boolean" />
           <NavigationProperty Name="Sorular" Relationship="Self.FK_Soru_Anket" FromRole="Anketler" ToRole="Sorular" />
           <NavigationProperty Name="Yanitlar" Relationship="Self.FK_Yanit_Anket" FromRole="Anketler" ToRole="Yanitlar" />
+          <Property Name="Anket_Olusturulma_Tarih" Type="DateTime" Precision="3" />
+          <Property Name="Anket_Basligi" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Anket_Aciklamasi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Kullanici">
           <Key>
@@ -448,112 +422,90 @@
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="AnketModelStoreContainer" CdmEntityContainer="AnketEntities1">
-          <EntitySetMapping Name="Anketler">
-            <EntityTypeMapping TypeName="AnketModel.Anketler">
-              <MappingFragment StoreEntitySet="Anketler">
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AnketModelStoreContainer" CdmEntityContainer="AnketEntities1">
+    <EntitySetMapping Name="Anketler">
+      <EntityTypeMapping TypeName="IsTypeOf(AnketModel.Anketler)">
+        <MappingFragment StoreEntitySet="Anketler">
+          <ScalarProperty Name="Anket_Aciklamasi" ColumnName="Anket_Aciklamasi" />
+                <ScalarProperty Name="Anket_Basligi" ColumnName="Anket_Basligi" />
+                <ScalarProperty Name="Anket_Olusturulma_Tarih" ColumnName="Anket_Olusturulma_Tarih" />
                 <ScalarProperty Name="Anket_ID" ColumnName="Anket_ID" />
-                <ScalarProperty Name="Anket_Adi" ColumnName="Anket_Adi" />
-                <ScalarProperty Name="Anket_Baslangic_Tarih" ColumnName="Anket_Baslangic_Tarih" />
-                <ScalarProperty Name="Anket_Bitis_Tarih" ColumnName="Anket_Bitis_Tarih" />
-                <ScalarProperty Name="Anket_Katilim" ColumnName="Anket_Katilim" />
-                <ScalarProperty Name="Anket_Durum" ColumnName="Anket_Durum" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Kullanici">
-            <EntityTypeMapping TypeName="AnketModel.Kullanici">
-              <MappingFragment StoreEntitySet="Kullanici">
-                <ScalarProperty Name="Kullanici_ID" ColumnName="Kullanici_ID" />
-                <ScalarProperty Name="Kullanici_Adi" ColumnName="Kullanici_Adi" />
-                <ScalarProperty Name="Kullanici_Parola" ColumnName="Kullanici_Parola" />
-                <ScalarProperty Name="Kullanici_Email" ColumnName="Kullanici_Email" />
-                <ScalarProperty Name="Rol_ID" ColumnName="Rol_ID" />
-                <ScalarProperty Name="Kayıt_Tarihi" ColumnName="Kayıt_Tarihi" />
-                <ScalarProperty Name="Son_Giris_Tarihi" ColumnName="Son_Giris_Tarihi" />
-                <ScalarProperty Name="Durum" ColumnName="Durum" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Rol">
-            <EntityTypeMapping TypeName="AnketModel.Rol">
-              <MappingFragment StoreEntitySet="Rol">
-                <ScalarProperty Name="Rol_ID" ColumnName="Rol_ID" />
-                <ScalarProperty Name="Rol_Adi" ColumnName="Rol_Adi" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Secenekler">
-            <EntityTypeMapping TypeName="AnketModel.Secenekler">
-              <MappingFragment StoreEntitySet="Secenekler">
-                <ScalarProperty Name="Secenek_ID" ColumnName="Secenek_ID" />
-                <ScalarProperty Name="Secenek_Adi" ColumnName="Secenek_Adi" />
-                <ScalarProperty Name="Soru_ID" ColumnName="Soru_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Sorular">
-            <EntityTypeMapping TypeName="AnketModel.Sorular">
-              <MappingFragment StoreEntitySet="Sorular">
-                <ScalarProperty Name="Soru_ID" ColumnName="Soru_ID" />
-                <ScalarProperty Name="Anket_ID" ColumnName="Anket_ID" />
-                <ScalarProperty Name="Soru_Baslik" ColumnName="Soru_Baslik" />
-                <ScalarProperty Name="Soru_Tipi" ColumnName="Soru_Tipi" />
-                <ScalarProperty Name="Soru_Durum" ColumnName="Soru_Durum" />
-                <ScalarProperty Name="Soru_Olusturma_Tarih" ColumnName="Soru_Olusturma_Tarih" />
-                <ScalarProperty Name="Soru_Guncelle_Tarih" ColumnName="Soru_Guncelle_Tarih" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="AnketModel.sysdiagrams">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Yanitlar">
-            <EntityTypeMapping TypeName="AnketModel.Yanitlar">
-              <MappingFragment StoreEntitySet="Yanitlar">
-                <ScalarProperty Name="Yanit_ID" ColumnName="Yanit_ID" />
-                <ScalarProperty Name="Anket_ID" ColumnName="Anket_ID" />
-                <ScalarProperty Name="Soru_ID" ColumnName="Soru_ID" />
-                <ScalarProperty Name="Secenek_ID" ColumnName="Secenek_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="AnketModel.Store.sp_alterdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="AnketModel.Store.sp_creatediagram" />
-          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="AnketModel.Store.sp_dropdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="AnketModel.Store.sp_helpdiagramdefinition">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="AnketModel.sp_helpdiagramdefinition_Result">
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="AnketModel.Store.sp_helpdiagrams">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="AnketModel.sp_helpdiagrams_Result">
-                <ScalarProperty Name="Database" ColumnName="Database" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Owner" ColumnName="Owner" />
-                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="AnketModel.Store.sp_renamediagram" />
-          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="AnketModel.Store.sp_upgraddiagrams" />
-        </EntityContainerMapping>
-      </Mapping>
-    </edmx:Mappings>
+          <ScalarProperty Name="Anket_Adi" ColumnName="Anket_Adi" />
+          <ScalarProperty Name="Anket_Baslangic_Tarih" ColumnName="Anket_Baslangic_Tarih" />
+          <ScalarProperty Name="Anket_Bitis_Tarih" ColumnName="Anket_Bitis_Tarih" />
+          <ScalarProperty Name="Anket_Katilim" ColumnName="Anket_Katilim" />
+          <ScalarProperty Name="Anket_Durum" ColumnName="Anket_Durum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kullanici">
+      <EntityTypeMapping TypeName="IsTypeOf(AnketModel.Kullanici)">
+        <MappingFragment StoreEntitySet="Kullanici">
+          <ScalarProperty Name="Kullanici_ID" ColumnName="Kullanici_ID" />
+          <ScalarProperty Name="Kullanici_Adi" ColumnName="Kullanici_Adi" />
+          <ScalarProperty Name="Kullanici_Parola" ColumnName="Kullanici_Parola" />
+          <ScalarProperty Name="Kullanici_Email" ColumnName="Kullanici_Email" />
+          <ScalarProperty Name="Rol_ID" ColumnName="Rol_ID" />
+          <ScalarProperty Name="Kayıt_Tarihi" ColumnName="Kayıt_Tarihi" />
+          <ScalarProperty Name="Son_Giris_Tarihi" ColumnName="Son_Giris_Tarihi" />
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rol">
+      <EntityTypeMapping TypeName="IsTypeOf(AnketModel.Rol)">
+        <MappingFragment StoreEntitySet="Rol">
+          <ScalarProperty Name="Rol_ID" ColumnName="Rol_ID" />
+          <ScalarProperty Name="Rol_Adi" ColumnName="Rol_Adi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Secenekler">
+      <EntityTypeMapping TypeName="IsTypeOf(AnketModel.Secenekler)">
+        <MappingFragment StoreEntitySet="Secenekler">
+          <ScalarProperty Name="Secenek_ID" ColumnName="Secenek_ID" />
+          <ScalarProperty Name="Secenek_Adi" ColumnName="Secenek_Adi" />
+          <ScalarProperty Name="Soru_ID" ColumnName="Soru_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sorular">
+      <EntityTypeMapping TypeName="IsTypeOf(AnketModel.Sorular)">
+        <MappingFragment StoreEntitySet="Sorular">
+          <ScalarProperty Name="Soru_ID" ColumnName="Soru_ID" />
+          <ScalarProperty Name="Anket_ID" ColumnName="Anket_ID" />
+          <ScalarProperty Name="Soru_Baslik" ColumnName="Soru_Baslik" />
+          <ScalarProperty Name="Soru_Tipi" ColumnName="Soru_Tipi" />
+          <ScalarProperty Name="Soru_Durum" ColumnName="Soru_Durum" />
+          <ScalarProperty Name="Soru_Olusturma_Tarih" ColumnName="Soru_Olusturma_Tarih" />
+          <ScalarProperty Name="Soru_Guncelle_Tarih" ColumnName="Soru_Guncelle_Tarih" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="IsTypeOf(AnketModel.sysdiagrams)">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Yanitlar">
+      <EntityTypeMapping TypeName="IsTypeOf(AnketModel.Yanitlar)">
+        <MappingFragment StoreEntitySet="Yanitlar">
+          <ScalarProperty Name="Yanit_ID" ColumnName="Yanit_ID" />
+          <ScalarProperty Name="Anket_ID" ColumnName="Anket_ID" />
+          <ScalarProperty Name="Soru_ID" ColumnName="Soru_ID" />
+          <ScalarProperty Name="Secenek_ID" ColumnName="Secenek_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
@@ -567,7 +519,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>

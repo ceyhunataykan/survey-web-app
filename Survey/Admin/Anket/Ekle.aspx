@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="Ekle.aspx.cs" Inherits="Survey.Admin.Anket.Ekle" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -11,19 +12,43 @@
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Anket Adı</label>
                             <div class="col-sm-6">
-                                <asp:TextBox runat="server" ID="txtAnketAd" CssClass="form-control"/>
+                                <asp:TextBox runat="server" ID="txtAnketAd" CssClass="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">Anket Başlığı</label>
+                            <div class="col-sm-6">
+                                <asp:TextBox runat="server" ID="txtAnketBasligi" CssClass="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">Anket Açıklaması</label>
+                            <div class="col-sm-6">
+                                <asp:TextBox runat="server" ID="txtAnketAciklamasi" TextMode="MultiLine" CssClass="form-control" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Başlangıç Tarihi</label>
                             <div class="col-sm-6">
-                                <asp:TextBox runat="server" ID="txtBaslangicTarih" CssClass="form-control" TextMode ="Date"/>
+                                <asp:TextBox runat="server" ID="txtBaslangicTarih" CssClass="form-control" TextMode="Date" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">Başlangıç Saati</label>
+                            <div class="col-sm-6">
+                                <asp:TextBox runat="server" ID="txtBaslangicSaati" CssClass="form-control" TextMode="Time" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Bitiş Tarihi</label>
                             <div class="col-sm-6">
-                                <asp:TextBox runat="server" ID="txtBitisTarih" CssClass="form-control" TextMode ="Date"/>                            
+                                <asp:TextBox runat="server" ID="txtBitisTarih" CssClass="form-control" TextMode="Date" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-4 control-label">Bitiş Saati</label>
+                            <div class="col-sm-6">
+                                <asp:TextBox runat="server" ID="txtBitisSaati" CssClass="form-control" TextMode="Time" />
                             </div>
                         </div>
                         <div class="form-group">
@@ -43,7 +68,7 @@
                             </div>
                         </div>
                         <br />
-                        <div class="form-group">   
+                        <div class="form-group">
                             <div class="col-sm-4"></div>
                             <div class="col-md-6">
                                 <asp:Label Text="" ID="Mesaj" runat="server" />

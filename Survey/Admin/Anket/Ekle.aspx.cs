@@ -31,10 +31,17 @@ namespace Survey.Admin.Anket
             }
             else
             {
+                string baslangictarihsaat = txtBaslangicTarih.Text + " " + txtBaslangicSaati.Text;
+                string bitistarihsaat = txtBitisTarih.Text + " " + txtBitisSaati.Text;
+
+
                 Anketler Ekle = new Anketler();
                 Ekle.Anket_Adi = txtAnketAd.Text.Trim();
-                Ekle.Anket_Baslangic_Tarih = Convert.ToDateTime(txtBaslangicTarih.Text);
-                Ekle.Anket_Bitis_Tarih = Convert.ToDateTime(txtBitisTarih.Text);
+                Ekle.Anket_Basligi = txtAnketBasligi.Text.Trim();
+                Ekle.Anket_Aciklamasi = txtAnketAciklamasi.Text.Trim();
+                Ekle.Anket_Olusturulma_Tarih = DateTime.Now;
+                Ekle.Anket_Baslangic_Tarih = Convert.ToDateTime(baslangictarihsaat);
+                Ekle.Anket_Bitis_Tarih = Convert.ToDateTime(bitistarihsaat);
                 Ekle.Anket_Katilim = 0;
                 if (anketDurum.SelectedValue == "1")
                 {

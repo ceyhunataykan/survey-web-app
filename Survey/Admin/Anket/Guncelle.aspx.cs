@@ -27,6 +27,8 @@ namespace Survey.Admin.Anket
 
             var getir = db.Anketler.Where(a => a.Anket_ID == surveyApp.anketid).FirstOrDefault();
             txtAnketAd.Text = getir.Anket_Adi;
+            txtAnketBasligi.Text = getir.Anket_Basligi;
+            txtAnketAciklamasi.Text = getir.Anket_Aciklamasi;
             txtBaslangicTarih.Text = Convert.ToString(getir.Anket_Baslangic_Tarih);
             txtBitisTarih.Text = Convert.ToString(getir.Anket_Bitis_Tarih);
             if (getir.Anket_Durum == true)

@@ -30,7 +30,15 @@ namespace Survey.User
             surveyApp.anketid = Convert.ToInt32(Request.QueryString["anket-id"]);
 
             var bas = db.Sorular.Where(s => s.Anket_ID == surveyApp.anketid).FirstOrDefault();
-            lblBaslik.Text = bas.Anketler.Anket_Adi.ToString();
+            if (bas.Anketler.Anket_Basligi == null)
+            {
+                lblBaslik.Text = "Anketin Başlığı yok. Lütfen Düzenleyiniz... ";
+            }
+            else
+            {
+                lblBaslik.Text = bas.Anketler.Anket_Basligi.ToString();
+            }
+            
             var soruListe = db.Sorular.Where(s => s.Anket_ID == surveyApp.anketid).ToList();
             rptListe.DataSource = soruListe;
             rptListe.DataBind();

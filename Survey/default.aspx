@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/style.css" rel="stylesheet" />
-    <script src="scripts/jquery-3.1.1.min.js"></script>
+    <script src="scripts/jquery-3.4.1.min.js"></script>
     <script src="scripts/bootstrap.min.js"></script>
     <style>
         body {

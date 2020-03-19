@@ -28,7 +28,43 @@ namespace Survey.Admin.Uye
 
         protected void btnKaydet_Click(object sender, EventArgs e)
         {
+            if (txtKullanici.Text == "" || txtParola.Text == "" || txtParolaTek.Text == "" || txtEmail.Text == "" || ddlKullaniciTip.SelectedIndex == -1)
+            {
+                Mesaj.Text = "Bilgiler Boş Olamaz";
+                Mesaj.CssClass = "alert alert-danger";
+                ClientScript.RegisterStartupScript(this.GetType(), "HideLabel", "<script type=\"text/javascript\">setTimeout(\"document.getElementById('" + Mesaj.ClientID + "').style.display='none'\",4000)</script>");
+                return;
+            }
 
+            if (txtParola.Text != txtParolaTek.Text)
+            {
+                Mesaj.Text = "Parolalar Eşleşmiyor. Lütfen Kontrol Ediniz.";
+                Mesaj.CssClass = "alert alert-danger";
+                ClientScript.RegisterStartupScript(this.GetType(), "HideLabel", "<script type=\"text/javascript\">setTimeout(\"document.getElementById('" + Mesaj.ClientID + "').style.display='none'\",4000)</script>");
+                return;
+            }
+
+            Kullanici ekle = new Kullanici();
+            ekle.Kullanici_Adi = txtKullanici.Text.Trim();
+            ekle.Kullanici_Parola = txtParolaTek.Text.Trim();
+            ekle.Kullanici_Email = txtEmail.Text.Trim(); 
+            ekle.Kayıt_Tarihi = DateTime.Now;
+            ekle.Rol_ID = Convert.ToInt32(ddlKullaniciTip.SelectedValue);
+            if (rbKullaniciDurum.SelectedValue == "1")
+            {
+                ekle.Durum = true;
+            }
+            else
+            {
+                ekle.Durum = false;
+            }
+            db.Kullanici.Add(ekle);
+            db.SaveChanges();
+
+            Mesaj.Text = "Yeni Kullanıcı Oluşturuldu.";
+            Mesaj.CssClass = "alert alert-success";
+            ClientScript.RegisterStartupScript(this.GetType(), "HideLabel", "<script type=\"text/javascript\">setTimeout(\"document.getElementById('" + Mesaj.ClientID + "').style.display='none'\",4000)</script>");
+            Response.Redirect("Liste.aspx");
         }
     }
 }

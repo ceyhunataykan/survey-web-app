@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Survey.Admin.Anket {
-    
-    
-    public partial class Ekle {
-        
+namespace Survey.Admin.Anket
+{
+
+
+    public partial class Ekle
+    {
+
         /// <summary>
         /// txtAnketAd control.
         /// </summary>
@@ -20,7 +22,25 @@ namespace Survey.Admin.Anket {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtAnketAd;
-        
+
+        /// <summary>
+        /// txtAnketBasligi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtAnketBasligi;
+
+        /// <summary>
+        /// txtAnketAciklamasi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtAnketAciklamasi;
+
         /// <summary>
         /// txtBaslangicTarih control.
         /// </summary>
@@ -29,7 +49,16 @@ namespace Survey.Admin.Anket {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtBaslangicTarih;
-        
+
+        /// <summary>
+        /// txtBaslangicSaati control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtBaslangicSaati;
+
         /// <summary>
         /// txtBitisTarih control.
         /// </summary>
@@ -38,7 +67,16 @@ namespace Survey.Admin.Anket {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtBitisTarih;
-        
+
+        /// <summary>
+        /// txtBitisSaati control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtBitisSaati;
+
         /// <summary>
         /// anketDurum control.
         /// </summary>
@@ -47,7 +85,7 @@ namespace Survey.Admin.Anket {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList anketDurum;
-        
+
         /// <summary>
         /// btnIptal control.
         /// </summary>
@@ -56,7 +94,7 @@ namespace Survey.Admin.Anket {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnIptal;
-        
+
         /// <summary>
         /// btnKaydet control.
         /// </summary>
@@ -65,7 +103,7 @@ namespace Survey.Admin.Anket {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnKaydet;
-        
+
         /// <summary>
         /// Mesaj control.
         /// </summary>
