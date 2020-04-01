@@ -454,6 +454,7 @@
     <Compile Include="KayitOl.aspx.designer.cs">
       <DependentUpon>KayitOl.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\AnketInitializer.cs" />
     <Compile Include="Models\Anketler.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -636,4 +637,11 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Target Name="CopyRoslynFiles" AfterTargets="AfterBuild" Condition="!$(Disable_CopyWebApplication) And '$(OutDir)' != '$(OutputPath)'">
+    <ItemGroup>
+      <RoslynFiles Include="$(CscToolPath)\*" />
+    </ItemGroup>
+    <MakeDir Directories="$(WebProjectOutputDir)\bin\roslyn" />
+    <Copy SourceFiles="@(RoslynFiles)" DestinationFolder="$(WebProjectOutputDir)\bin\roslyn" SkipUnchangedFiles="true" Retries="$(CopyRetryCount)" RetryDelayMilliseconds="$(CopyRetryDelayMilliseconds)" />
+  </Target>
 </Project>

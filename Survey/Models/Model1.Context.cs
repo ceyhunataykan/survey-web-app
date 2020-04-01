@@ -26,8 +26,8 @@ public partial class AnketEntities1 : DbContext
     public AnketEntities1()
         : base("name=AnketEntities1")
     {
-
-    }
+            Database.SetInitializer(new AnketInitializer());
+        }
 
     protected override void OnModelCreating(DbModelBuilder modelBuilder)
     {

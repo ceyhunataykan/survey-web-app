@@ -33,6 +33,7 @@ namespace Survey
                     {
                         Response.Redirect("~/Admin/Dashboard.aspx");
                     }
+
                     if (sorgu.Rol_ID == 2)
                     {
                         Response.Redirect("~/User/Dashboard.aspx");
