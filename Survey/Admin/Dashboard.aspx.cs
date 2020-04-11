@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿using Microsoft.AspNet.Identity;
+using System;
 
 namespace Survey.Admin
 {
@@ -11,7 +7,17 @@ namespace Survey.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            surveyApp.loginKontrol();
+            if (!IsPostBack)
+            {
+                if (User.Identity.IsAuthenticated)
+                {
+                    surveyApp.username = User.Identity.GetUserName();
+                }
+                else
+                {
+                    Response.Redirect("~/Login.aspx");
+                }
+            }
         }
     }
 }

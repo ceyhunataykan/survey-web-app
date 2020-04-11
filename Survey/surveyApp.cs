@@ -9,13 +9,7 @@ namespace Survey
     {
         public static int anketid;
         public static int soruid;
+        public static string username;
 
-        public static void loginKontrol()
-        {
-            if (HttpContext.Current.Session["uyeId"] == null)
-            {
-                HttpContext.Current.Response.Redirect("~/Login.aspx");
-            }
-        }
     }   
 }

@@ -33,7 +33,7 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user fa"></i>&nbsp;&nbsp;&nbsp;<%= Session["uyeKadi"] %></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user fa"></i>&nbsp;&nbsp;&nbsp;<asp:Literal runat="server" ID="StatusText" /></a>
                             <ul class="dropdown-menu">
                                 <li><a href="/Admin/Hesap/Profil.aspx">Profil</a></li>
                                 <li><a href="/Admin/Hesap/Parola.aspx">Parola Değiştir</a></li>

@@ -18,36 +18,43 @@
             <div class="logo text-center" style="margin-top: 10px; margin-right: 10px">
                 <img src="Content/logo-bg.png" />
             </div>
-            <form runat="Server" method="post" action="GirisYap.aspx" id="loginbox">
-                <div class="form-horizontal">
-                    <input type="text" name="txtKullaniciAdi" class="form-control" placeholder="Kullanıcı Adı" /><br />
-                    <input type="password" name="txtParola" class="form-control" placeholder="Parola" /><br />
-                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Giriş" />
-                    <a href="Signup.aspx" class="btn btn-danger btn-lg btn-block">Kayıt Ol</a>
+            <form id="loginbox" runat="server">
+                <div class="form-horzontal">
+                    <asp:PlaceHolder runat="server" ID="LoginStatus" Visible="false">
+                        <p class="text-center">
+                            <span class="badge badge-warning">
+                                <asp:Literal runat="server" ID="StatusText" />
+                            </span>
+                        </p>
+                    </asp:PlaceHolder>
+                    <asp:PlaceHolder runat="server" ID="LoginForm" Visible="false">
+                        <div style="margin-bottom: 10px">
+                            <asp:Label runat="server" AssociatedControlID="UserName">Kullanıcı Adı</asp:Label>
+                            <div>
+                                <asp:TextBox runat="server" CssClass="form-control" ID="UserName" />
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 10px">
+                            <asp:Label runat="server" AssociatedControlID="Password">Parola</asp:Label>
+                            <div>
+                                <asp:TextBox runat="server" CssClass="form-control" ID="Password" TextMode="Password" />
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 10px">
+                            <div>
+                                <asp:Button runat="server" CssClass="btn btn-primary btn-lg btn-block" OnClick="SignIn" Text="Giriş Yap" />
+                                <a href="Signup.aspx" class="btn btn-danger btn-lg btn-block">Kayıt Ol</a>
+                            </div>
+                        </div>
+                    </asp:PlaceHolder>
+                    <asp:PlaceHolder runat="server" ID="LogoutButton" Visible="false">
+                        <div>
+                            <div>
+                                <asp:Button runat="server" CssClass="btn btn-danger" OnClick="SignOut" Text="Çıkış Yap" />
+                            </div>
+                        </div>
+                    </asp:PlaceHolder>
                 </div>
-                <br />
-                <%
-                    if (Request.QueryString["h"] != null)
-                    {
-                        if (Request.QueryString["h"].ToString() == "1")
-                        {
-                %>
-                <div class="alert alert-danger text-center">Lütfen Kullanıcı Adı veya Parola Giriniz!</div>
-                <%} %>
-                <%
-                    if (Request.QueryString["h"].ToString() == "2")
-                    {
-                %>
-                <div class="alert alert-danger text-center">Girilen Kullanıcı Adı veya Parola Geçersiz!</div>
-                <%}%>
-                <%
-                    if (Request.QueryString["h"].ToString() == "3")
-                    {
-                %>
-                <div class="alert alert-danger text-center">Kullanıcı Pasif Durumdadır!</div>
-                <%}%>
-                <%
-                    } %>
             </form>
         </div>
     </div>

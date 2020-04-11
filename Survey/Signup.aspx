@@ -18,38 +18,38 @@
             <div class="logo text-center" style="margin-top: 10px; margin-right: 10px">
                 <img src="Content/logo-bg.png" />
             </div>
-            <form runat="server" method="post" action="KayitOl.aspx" id="signupbox">
-                <div class="form-horizontal">
-                    <input type="text" name="txtKullaniciAdi" class="form-control" placeholder="Kullanıcı Adı" /><br />
-                    <input type="password" name="txtParola" class="form-control" placeholder="Parola" /><br />
-                    <input type="password" name="txtParolaTekrar" class="form-control" placeholder="Parola Tekrar" /><br />
-                    <input type="text" name="txtEmail" class="form-control" placeholder="E-Posta" /><br />
-                    <input type="submit" class="btn btn-primary btn-lg btn-block" value="Kayıt Ol" />
-                    <a href="Login.aspx" class="btn btn-block btn-lg btn-danger">Giriş Yap</a>
+            <form id="loginbox" runat="server">
+                <div>
+                    <p>
+                        <span class="badge badge-warning">
+                            <asp:Literal runat="server" ID="StatusMessage" />
+                        </span>
+                    </p>
+                    <div style="margin-bottom: 10px">
+                        <asp:Label runat="server" AssociatedControlID="UserName">Kullanıcı Adı</asp:Label>
+                        <div>
+                            <asp:TextBox runat="server" CssClass="form-control" ID="UserName" />
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 10px">
+                        <asp:Label runat="server" AssociatedControlID="Password">Parola</asp:Label>
+                        <div>
+                            <asp:TextBox runat="server" ID="Password" CssClass="form-control" TextMode="Password" />
+                        </div>
+                    </div>
+                    <div style="margin-bottom: 10px">
+                        <asp:Label runat="server" AssociatedControlID="ConfirmPassword">Parola Tekrar</asp:Label>
+                        <div>
+                            <asp:TextBox runat="server" ID="ConfirmPassword" CssClass="form-control" TextMode="Password" />
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <asp:Button runat="server" OnClick="CreateUser_Click" CssClass="btn btn-primary btn-lg btn-block" Text="Kayıt Ol" />
+                            <a href="Login.aspx" class="btn btn-block btn-lg btn-danger">Giriş Yap</a>
+                        </div>
+                    </div>
                 </div>
-                <br />
-                <%
-                    if (Request.QueryString["h"] != null)
-                    {
-                        if (Request.QueryString["h"].ToString() == "1")
-                        {
-                %>
-                <div class="alert alert-danger text-center">Lütfen Alanları Boş Bırakmayınız!</div>
-                <%} %>
-                <%
-                    if (Request.QueryString["h"].ToString() == "2")
-                    {
-                %>
-                <div class="alert alert-danger text-center">Girilen Kullanıcı Adı Mevcut!</div>
-                <%}%>
-                <%
-                    if (Request.QueryString["h"].ToString() == "3")
-                    {
-                %>
-                <div class="alert alert-danger text-center">Parolalar Eşleşmiyor!</div>
-                <%}%>
-                <%
-                    } %>
             </form>
         </div>
     </div>

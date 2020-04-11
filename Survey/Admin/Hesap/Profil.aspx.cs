@@ -14,7 +14,6 @@ namespace Survey.Admin.Hesap
         int id;
         protected void Page_Load(object sender, EventArgs e)
         {
-            surveyApp.loginKontrol();
 
             id = Convert.ToInt32(Session["uyeId"].ToString());
             var sorgu = db.Kullanici.Where(k => k.Kullanici_ID == id).FirstOrDefault();

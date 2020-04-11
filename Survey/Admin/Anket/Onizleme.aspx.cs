@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Survey.Models;
 using System.Drawing;
+using Microsoft.AspNet.Identity;
 
 namespace Survey.Admin.Anket
 {
@@ -14,16 +15,22 @@ namespace Survey.Admin.Anket
         AnketEntities1 db = new AnketEntities1();
         protected void Page_Load(object sender, EventArgs e)
         {
-            surveyApp.loginKontrol();
-
+            if (!IsPostBack)
+            {
+                if (User.Identity.IsAuthenticated)
+                {
+                    surveyApp.username = User.Identity.GetUserName();
+                }
+                else
+                {
+                    Response.Redirect("~/Login.aspx");
+                }
+            }
             if (string.IsNullOrEmpty(Request.QueryString["anket-id"]))
             {
                 Response.Redirect("/Admin/Dashboard.aspx");
             }
-            if (IsPostBack)
-            {
-                return;
-            }
+           
 
             surveyApp.anketid = Convert.ToInt32(Request.QueryString["anket-id"]);
 

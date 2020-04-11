@@ -1,4 +1,5 @@
-﻿using Survey.Models;
+﻿using Microsoft.AspNet.Identity;
+using Survey.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,11 +14,17 @@ namespace Survey.Admin.Anket
         AnketEntities1 db = new AnketEntities1();
         protected void Page_Load(object sender, EventArgs e)
         {
-            surveyApp.loginKontrol();
 
-            if (IsPostBack)
+            if (!IsPostBack)
             {
-                return;
+                if (User.Identity.IsAuthenticated)
+                {
+                    surveyApp.username = User.Identity.GetUserName();
+                }
+                else
+                {
+                    Response.Redirect("~/Login.aspx");
+                }
             }
             if (string.IsNullOrEmpty(Request.QueryString["anket-id"]))
             {

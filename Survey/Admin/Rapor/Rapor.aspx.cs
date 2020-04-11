@@ -14,7 +14,6 @@ namespace Survey.Admin.Rapor
         AnketEntities1 db = new AnketEntities1();
         protected void Page_Load(object sender, EventArgs e)
         {
-            surveyApp.loginKontrol();
 
             if (IsPostBack)
             {

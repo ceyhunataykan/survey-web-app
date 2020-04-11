@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Survey.Models;
 using System.Data.Entity.Core.Objects;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Survey.Admin.Anket
 {
@@ -14,14 +16,25 @@ namespace Survey.Admin.Anket
         AnketEntities1 db = new AnketEntities1();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["uyeId"] == null)
-            {
-                Response.Redirect("~/Login.aspx");
-            }
+            var userStore = new UserStore<IdentityUser>();
+            var userManager = new UserManager<IdentityUser>(userStore);
+            var user = userManager.FindByName(surveyApp.username);
 
-            if (IsPostBack)
+            if (!IsPostBack)
             {
-                return;
+                if (User.Identity.IsAuthenticated && userManager.IsInRole(user.Id, "admin"))
+                {
+                    surveyApp.username = User.Identity.GetUserName();
+                }
+                else if (User.Identity.IsAuthenticated && userManager.IsInRole(user.Id, "user"))
+                {
+                    surveyApp.username = User.Identity.GetUserName();
+                    Response.Redirect("~/User/Dashboard.aspx");
+                }
+                else
+                {
+                    Response.Redirect("~/Login.aspx");
+                }
             }
             var liste = (from a in db.Anketler select new { a.Anket_ID, a.Anket_Adi, basTarih = EntityFunctions.TruncateTime(a.Anket_Baslangic_Tarih), bitTarih = EntityFunctions.TruncateTime(a.Anket_Bitis_Tarih), a.Anket_Durum, Soru_Sayi = a.Sorular.Count }).ToList();
             lvAnketListe.DataSource = liste;

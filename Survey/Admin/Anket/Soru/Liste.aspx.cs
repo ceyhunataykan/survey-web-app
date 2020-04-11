@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Microsoft.AspNet.Identity;
 using Survey.Models;
 
 namespace Survey.Admin.Anket.Soru
@@ -13,16 +14,22 @@ namespace Survey.Admin.Anket.Soru
         AnketEntities1 db = new AnketEntities1();
         protected void Page_Load(object sender, EventArgs e)
         {
-            surveyApp.loginKontrol();
-
+            if (!IsPostBack)
+            {
+                if (User.Identity.IsAuthenticated)
+                {
+                    surveyApp.username = User.Identity.GetUserName();
+                }
+                else
+                {
+                    Response.Redirect("~/Login.aspx");
+                }
+            }
             if (string.IsNullOrEmpty(Request.QueryString["anket-id"]))
             {
                 Response.Redirect("/Admin/Dashboard.aspx");
             }
-            if (IsPostBack)
-            {
-                return;
-            }
+            
             surveyApp.anketid = Convert.ToInt32(Request.QueryString["anket-id"]);
             lvSoruListe.DataSource = db.Sorular.Where(s => s.Anket_ID == surveyApp.anketid).ToList();
             lvSoruListe.DataBind();

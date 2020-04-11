@@ -11,7 +11,7 @@ namespace Survey.Admin.Uye.Rol
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            surveyApp.loginKontrol();
+
         }
     }
 }
