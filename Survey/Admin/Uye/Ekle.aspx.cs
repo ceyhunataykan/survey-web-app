@@ -10,9 +10,10 @@ namespace Survey.Admin.Uye
 {
     public partial class Ekle : System.Web.UI.Page
     {
-        AnketEntities1 db = new AnketEntities1();
+        AnketModel db = new AnketModel();
         protected void Page_Load(object sender, EventArgs e)
         {
+            surveyApp.loginKontrol();
 
             if (IsPostBack)
             {

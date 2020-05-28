@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="AnketModelDB-Web.config Connection String" description="AnketModelDB Connection String used in web.config by the application to access the database." defaultValue="data source=anketdb.database.windows.net;initial catalog=AnketDB;User ID=anketadmin;Password=Syst3ml0ka1;MultipleActiveResultSets=True;App=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\ceyhunataykan\\Documents\\works\\Eski\ Dosyalar\\survey\\survey-web-app\\Survey\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='AnketModelDB']/@connectionString" />
+  </parameter>
+  <parameter name="AnketModelDB_DatabasePublish-Web.config Connection String" description="AnketModelDB_DatabasePublish Connection String used in web.config by the application to access the database." defaultValue="AnketModelDB_DatabasePublish.ConnetionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\ceyhunataykan\\Documents\\works\\Eski\ Dosyalar\\survey\\survey-web-app\\Survey\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='AnketModelDB_DatabasePublish']/@connectionString" />
+  </parameter>
+</parameters>

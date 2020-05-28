@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>AnketP</title>
+    <title>Anket Portal</title>
     <link href="Content/reset.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
@@ -34,39 +34,44 @@
 <body>
     <form id="form1" runat="server">
         <!-- Container (Menü) -->
-        <nav class="navbar navbar-default navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <div style="margin-top: -10px">
-                        <a class="navbar-brand" href="default.aspx">
-                            <img class="logop" src="Content/logo.png" style="width: 150px" alt="Logo"/>
-                        </a>
-                    </div>
-                </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav">
-                        <li><a href="#home">Ana Sayfa</a></li>
-                        <li><a href="#services">Özellikler</a></li>
-                        <li><a href="#about">Hakkımızda</a></li>
-                        <li><a href="#contact">İletişim</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="Login.aspx"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;Kullanıcı Paneli</a></li>
-                    </ul>
-                </div>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="/Dashboard.aspx"><strong>| Anket Portal|</strong></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-between align-items-center w-100"
+                id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto text-md-center text-left">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/Dashboard.aspx">Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Özellikler</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Hakkımızda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">İletişim</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav flex-row justify-content-md-center justify-content-start flex-nowrap">
+                    <li class="nav-item">
+                        <a class="nav-link" href="Login.aspx"><i
+                        class="fa fa-user"></i>Kullanıcı Paneli</a>
+
+                    </li>
+                </ul>
             </div>
         </nav>
         <div id="home" class="jumbotron text-center">
             <h1>Anket Portal</h1>
             <p><b>Katılın, Oluşturun ve Anketlerinizi Yönetin!</b></p>
             <p>Basit ve hızlı kullanıcı arayüzümüz ile kendi anketlerinizi oluşturun.</p>
-            <div class="col-sm-12 form-inline" style="margin-top: 30px">
-                <a href="#" class="btn btn-lg btn-danger" style="font-size: 14px; width: 200px;" data-toggle="modal" data-target="#myModal">Hemen Bize Katılın!</a>
+            <div style="margin-top: 30px">
+                <a href="Signup.aspx" class="btn btn-lg btn-danger" style="font-size: 14px; width: 200px;">Hemen Bize Katılın!</a>
             </div>
         </div>
 
@@ -129,7 +134,7 @@
                     <p><b>Bizimle 24 saat İletişim Kurabilirsiniz.</b></p>
                     <p><span class="glyphicon glyphicon-map-marker"></span>&nbsp;&nbsp;Antalya, TR</p>
                     <p><span class="glyphicon glyphicon-phone"></span>&nbsp;&nbsp;90(242)1234567</p>
-                    <p><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;info@anketp.com</p>
+                    <p><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;info@anketportal.com</p>
                 </div>
                 <div class="col-sm-8">
                     <div class="row">
@@ -153,57 +158,9 @@
         </div>
         <footer class="footer" style="background-color: dimgray; height: 150px;">
             <div class="container">
-                <p class="text-center" style="color: #fff; margin-top: 75px">Ceyhun Ataykan 2016 Tüm Hakları Saklıdır.</p>
+                <p class="text-center" style="color: #fff; margin-top: 75px">Anket Portal @2020 Tüm Hakları Saklıdır.</p>
             </div>
         </footer>
-
-        <!-- KAYIT MODAL -->
-        <div id="myModal" class="modal fade" role="dialog" style="background-color: black;">
-            <div class="modal-dialog">
-                <div class="modal-body" style="margin: 0 auto; margin-top: 100px; width: 350px;">
-                    <div id="signupbox">
-                        <div class="form-horizontal">
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <input id="txtKullaniciKayit" name="txtKullanici" type="text" placeholder="Kullanıcı Adı" class="form-control input-md" required="" />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <input id="txtParolaKayit" name="txtParola" type="password" placeholder="Parola" class="form-control input-md" required="" />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <input id="txtParolaTekrar" name="txtParolaTekrar" type="password" placeholder="Parola Tekrar" class="form-control input-md" required="" />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <input id="txtEmail" name="txtEmail" type="text" placeholder="E-Posta" class="form-control input-md" required="" />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input id="txtSozlesme" name="txtHatirla" type="checkbox" />
-                                            Sözleşmeyi Kabul Ediyorum.</label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-12">
-                                    <button id="txtKayit" name="txtKayit" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-edit"></span>Kayıt Ol</button>
-                                    <button id="btnGirisTab" class="btn btn-block btn-danger" style="display: none; height: 50px;"><span class="glyphicon glyphicon-log-in"></span>Giriş Yap</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- MODAL SON -->
     </form>
 </body>
 </html>

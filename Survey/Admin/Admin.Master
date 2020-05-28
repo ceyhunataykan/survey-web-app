@@ -26,25 +26,25 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav" style="margin-left: 30px; margin-top:5px">
-                        <li><a href="/Admin/Dashboard.aspx">Dashboard</a></li>
-                        <li><a href="/Admin/Anket/Liste.aspx">Anketler</a></li>
-                        <li><a href="/Admin/Uye/Liste.aspx">Üyeler</a></li>
+                        <li><a href="/Dashboard.aspx">Dashboard</a></li>
+                        <li><a href="/Anket/Liste.aspx">Anketler</a></li>
                         <li><a href="/Admin/Rapor/Rapor.aspx">Raporlar</a></li>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul id="uyePanel" class="nav navbar-nav navbar-right">
                         <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user fa"></i>&nbsp;&nbsp;&nbsp;<asp:Literal runat="server" ID="StatusText" /></a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user fa"></i>&nbsp;&nbsp;&nbsp;<%= Session["uyeKadi"] %></a>
                             <ul class="dropdown-menu">
-                                <li><a href="/Admin/Hesap/Profil.aspx">Profil</a></li>
-                                <li><a href="/Admin/Hesap/Parola.aspx">Parola Değiştir</a></li>
-                                <li><a runat="server" id="btnKapat" href="/Admin/Hesap/GuvenliCikis.aspx">Güvenli Çıkış</a></li>
+                                <li><a href="/Admin/Hesap/Profil.aspx" style="color:#303030">Profil</a></li>
+                                <li><a href="/Admin/Hesap/Parola.aspx" style="color:#303030">Parola Değiştir</a></li>
+                                <li><a href="/Admin/Hesap/Dondur.aspx" style="color:#303030">Hesabı Dondur</a></li>
+                                <li><a runat="server" id="btnKapat" href="/Admin/Hesap/GuvenliCikis.aspx" style="color:#303030">Güvenli Çıkış</a></li>
                             </ul>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <div class="container-fluid">
+        <div class="container">
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">      
         </asp:ContentPlaceHolder>
     </div>
@@ -55,3 +55,9 @@
     </asp:ContentPlaceHolder>  
 </body>
 </html>
+<script>
+    <% if (Session["uyeKadi"] == null)
+    {%>
+    document.getElementById("uyePanel").style.display = "none";
+    <%}%>
+</script>

@@ -12,27 +12,28 @@
                         <legend>Email Değiştir</legend>
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Mevcut Email</label>
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <input runat="server" id="txtMevcutEmail" name="txtMevcutEmail" class="form-control" type="email" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Yeni Email</label>
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <input runat="server" id="txtYeniEmail" name="txtYeniEmail" class="form-control" type="email" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-4 control-label">Yeni Email Tekrar</label>
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <input runat="server" id="txtYeniEmailTek" name="txtYeniEmailTek" class="form-control" type="email" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-4 control-label"></label>
-                            <div class="col-md-6">
-                                <asp:Button Text="Vazgeç" ID="btnVazgec" CssClass="btn btn-danger btn-lg" OnClick="btnVazgec_Click" runat="server" />
-                                <asp:Button Text="Değiştir" ID="btnDegistir" CssClass="btn btn-success btn-lg" OnClick="btnDegistir_Click" runat="server" />
+                            <div class="col-sm-4">
+                                <asp:Button Text="Değiştir" ID="btnDegistir" CssClass="btn btn-success btn-lg btn-block" OnClick="btnDegistir_Click" runat="server" /><br />
+                                <asp:Button Text="Vazgeç" ID="btnVazgec" CssClass="btn btn-danger btn-lg btn-block" OnClick="btnVazgec_Click" runat="server" />
+                                
                             </div>
                         </div>
                         <br />

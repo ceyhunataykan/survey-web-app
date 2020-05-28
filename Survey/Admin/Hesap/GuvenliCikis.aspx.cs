@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace Survey.Admin.Hesap
 {
@@ -7,9 +11,10 @@ namespace Survey.Admin.Hesap
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            surveyApp.loginKontrol();
 
-            var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
-            authenticationManager.SignOut();
+            Session.Clear();
+            Session.Abandon();
             Response.Redirect("~/Login.aspx");
         }
     }

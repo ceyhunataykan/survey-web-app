@@ -31,7 +31,7 @@
                         </LayoutTemplate>
                         <ItemTemplate>
                             <tr>
-                                <td><a href="Soru/Liste.aspx?anket-id=<%# Eval("Anket_ID") %>" style="color:dimgray; font-size:12px; font-weight:bold"><%# Eval("Anket_Adi") %></a></td>
+                                <td><a href="/Anket/Onizleme.aspx?anket-id=<%# Eval("Anket_ID") %>" style="color:dimgray; font-size:12px; font-weight:bold"><%# Eval("Anket_Adi") %></a></td>
                                 <td class="text-center"><%# Eval("basTarih","{0:d}") %></td>
                                 <td class="text-center"><%# Eval("bitTarih","{0:d}") %></td>
                                 <td class="text-center"><%# Eval("Anket_Katilim") %></td>

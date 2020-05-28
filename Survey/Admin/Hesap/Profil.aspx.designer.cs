@@ -7,11 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Survey.Admin.Hesap {
-    
-    
-    public partial class Profil {
-        
+namespace Survey.Admin.Hesap
+{
+
+
+    public partial class Profil
+    {
+
+        /// <summary>
+        /// txtEposta control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtEposta;
+
         /// <summary>
         /// txtKullaniciAdi control.
         /// </summary>
@@ -20,16 +31,7 @@ namespace Survey.Admin.Hesap {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label txtKullaniciAdi;
-        
-        /// <summary>
-        /// txtYetki control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtYetki;
-        
+
         /// <summary>
         /// txtKayitTarihi control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Survey.Admin.Hesap {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label txtKayitTarihi;
-        
+
         /// <summary>
         /// btnVazgec control.
         /// </summary>

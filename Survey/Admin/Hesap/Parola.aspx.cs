@@ -9,10 +9,11 @@ namespace Survey.Admin.Hesap
 {
     public partial class Parola : System.Web.UI.Page
     {
-        AnketEntities1 db = new AnketEntities1();
+        AnketModel db = new AnketModel();
         int id;
         protected void Page_Load(object sender, EventArgs e)
         {
+            surveyApp.loginKontrol();
 
             id = Convert.ToInt32(Session["uyeId"].ToString());
 

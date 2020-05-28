@@ -9,6 +9,7 @@
             </div>
         </div>
     </div>
+
     <div class="row">
         <div class="col-sm-6 col-md-offset-3">
             <div class="well">
@@ -19,19 +20,13 @@
                             <tr>
                                 <td>E-Posta</td>
                                 <td>:</td>
-                                <td>ceyhunataykan@gmail.com</td>
+                                <td><asp:Label ID="txtEposta" Text="" runat="server" /></td>
                             </tr>
                             <tr>
                                 <td>Kullanıcı Adı</td>
                                 <td>:</td>
                                 <td>
                                     <asp:Label ID="txtKullaniciAdi" Text="" runat="server" /></td>
-                            </tr>
-                            <tr>
-                                <td>Yetki</td>
-                                <td>:</td>
-                                <td>
-                                    <asp:Label ID="txtYetki" Text="" runat="server" /></td>
                             </tr>
                             <tr>
                                 <td>Kayıt Tarihi</td>
@@ -43,8 +38,9 @@
                                 <td></td>
                                 <td></td>
                                 <td>
-                                    <asp:Button ID="btnVazgec" Text="Vazgeç" CssClass="btn btn-danger btn-lg" OnClick="btnVazgec_Click" runat="server" />
-                                    <a href="Email.aspx" class="btn btn-primary btn-lg">E-Mail Değişikliği</a>
+                                    <a href="Email.aspx" class="btn btn-primary btn-lg btn-block">E-Mail Değişikliği</a><br />
+                                    <asp:Button ID="btnVazgec" Text="Geri Dön" CssClass="btn btn-danger btn-block" OnClick="btnVazgec_Click" runat="server" />
+                                    
                                 </td>
                             </tr>
                         </table>

@@ -1,7 +1,4 @@
 ﻿using System;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-using Microsoft.Owin.Security;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,7 +11,7 @@ namespace Survey.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            StatusText.Text = surveyApp.username;
+
         }
     }
 }

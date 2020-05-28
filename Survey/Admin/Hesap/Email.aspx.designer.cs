@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Survey.Admin.Hesap {
-    
-    
-    public partial class Email {
-        
+namespace Survey.Admin.Hesap
+{
+
+
+    public partial class Email
+    {
+
         /// <summary>
         /// txtMevcutEmail control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Survey.Admin.Hesap {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtMevcutEmail;
-        
+
         /// <summary>
         /// txtYeniEmail control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Survey.Admin.Hesap {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtYeniEmail;
-        
+
         /// <summary>
         /// txtYeniEmailTek control.
         /// </summary>
@@ -38,16 +40,7 @@ namespace Survey.Admin.Hesap {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtYeniEmailTek;
-        
-        /// <summary>
-        /// btnVazgec control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnVazgec;
-        
+
         /// <summary>
         /// btnDegistir control.
         /// </summary>
@@ -56,7 +49,16 @@ namespace Survey.Admin.Hesap {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnDegistir;
-        
+
+        /// <summary>
+        /// btnVazgec control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnVazgec;
+
         /// <summary>
         /// sonuc control.
         /// </summary>
