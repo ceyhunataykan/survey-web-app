@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AnketModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="AnketModelStoreContainer">
+    <EntitySet Name="Anketler" EntityType="AnketModel.Store.Anketler" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Kullanici" EntityType="AnketModel.Store.Kullanici" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Rol" EntityType="AnketModel.Store.Rol" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Secenekler" EntityType="AnketModel.Store.Secenekler" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sorular" EntityType="AnketModel.Store.Sorular" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="AnketModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Yanitlar" EntityType="AnketModel.Store.Yanitlar" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Soru_Anket" Association="AnketModel.Store.FK_Soru_Anket">
+      <End Role="Anketler" EntitySet="Anketler" />
+      <End Role="Sorular" EntitySet="Sorular" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Yanit_Anket" Association="AnketModel.Store.FK_Yanit_Anket">
+      <End Role="Anketler" EntitySet="Anketler" />
+      <End Role="Yanitlar" EntitySet="Yanitlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kullanici_Rol" Association="AnketModel.Store.FK_Kullanici_Rol">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="Kullanici" EntitySet="Kullanici" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Secenek_Soru" Association="AnketModel.Store.FK_Secenek_Soru">
+      <End Role="Sorular" EntitySet="Sorular" />
+      <End Role="Secenekler" EntitySet="Secenekler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Yanit_Secenek" Association="AnketModel.Store.FK_Yanit_Secenek">
+      <End Role="Secenekler" EntitySet="Secenekler" />
+      <End Role="Yanitlar" EntitySet="Yanitlar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Yanit_Soru" Association="AnketModel.Store.FK_Yanit_Soru">
+      <End Role="Sorular" EntitySet="Sorular" />
+      <End Role="Yanitlar" EntitySet="Yanitlar" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Anketler">
+    <Key>
+      <PropertyRef Name="Anket_ID" />
+    </Key>
+    <Property Name="Anket_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Anket_Adi" Type="nvarchar" Nullable="true" MaxLength="150" />
+    <Property Name="Anket_Baslangic_Tarih" Type="datetime" Nullable="true" />
+    <Property Name="Anket_Bitis_Tarih" Type="datetime" Nullable="true" />
+    <Property Name="Anket_Katilim" Type="int" Nullable="true" />
+    <Property Name="Anket_Durum" Type="bit" Nullable="true" />
+    <Property Name="Anket_Olusturulma_Tarih" Type="datetime" Nullable="true" />
+    <Property Name="Anket_Basligi" Type="nvarchar" Nullable="true" MaxLength="150" />
+    <Property Name="Anket_Aciklamasi" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Kullanici">
+    <Key>
+      <PropertyRef Name="Kullanici_ID" />
+    </Key>
+    <Property Name="Kullanici_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Kullanici_Adi" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Kullanici_Parola" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Kullanici_Email" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="Rol_ID" Type="int" Nullable="true" />
+    <Property Name="Kayıt_Tarihi" Type="datetime" Nullable="true" />
+    <Property Name="Son_Giris_Tarihi" Type="datetime" Nullable="true" />
+    <Property Name="Durum" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Rol">
+    <Key>
+      <PropertyRef Name="Rol_ID" />
+    </Key>
+    <Property Name="Rol_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Rol_Adi" Type="nvarchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Secenekler">
+    <Key>
+      <PropertyRef Name="Secenek_ID" />
+    </Key>
+    <Property Name="Secenek_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Secenek_Adi" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Soru_ID" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Sorular">
+    <Key>
+      <PropertyRef Name="Soru_ID" />
+    </Key>
+    <Property Name="Soru_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Anket_ID" Type="int" Nullable="true" />
+    <Property Name="Soru_Baslik" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Soru_Tipi" Type="int" Nullable="true" />
+    <Property Name="Soru_Durum" Type="bit" Nullable="true" />
+    <Property Name="Soru_Olusturma_Tarih" Type="datetime" Nullable="true" />
+    <Property Name="Soru_Guncelle_Tarih" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" Nullable="true" />
+    <Property Name="definition" Type="varbinary(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Yanitlar">
+    <Key>
+      <PropertyRef Name="Yanit_ID" />
+    </Key>
+    <Property Name="Yanit_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Anket_ID" Type="int" Nullable="true" />
+    <Property Name="Soru_ID" Type="int" Nullable="true" />
+    <Property Name="Secenek_ID" Type="int" Nullable="true" />
+  </EntityType>
+  <Association Name="FK_Soru_Anket">
+    <End Role="Anketler" Type="AnketModel.Store.Anketler" Multiplicity="0..1" />
+    <End Role="Sorular" Type="AnketModel.Store.Sorular" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Anketler">
+        <PropertyRef Name="Anket_ID" />
+      </Principal>
+      <Dependent Role="Sorular">
+        <PropertyRef Name="Anket_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Yanit_Anket">
+    <End Role="Anketler" Type="AnketModel.Store.Anketler" Multiplicity="0..1" />
+    <End Role="Yanitlar" Type="AnketModel.Store.Yanitlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Anketler">
+        <PropertyRef Name="Anket_ID" />
+      </Principal>
+      <Dependent Role="Yanitlar">
+        <PropertyRef Name="Anket_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kullanici_Rol">
+    <End Role="Rol" Type="AnketModel.Store.Rol" Multiplicity="0..1" />
+    <End Role="Kullanici" Type="AnketModel.Store.Kullanici" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="Rol_ID" />
+      </Principal>
+      <Dependent Role="Kullanici">
+        <PropertyRef Name="Rol_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Secenek_Soru">
+    <End Role="Sorular" Type="AnketModel.Store.Sorular" Multiplicity="0..1" />
+    <End Role="Secenekler" Type="AnketModel.Store.Secenekler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sorular">
+        <PropertyRef Name="Soru_ID" />
+      </Principal>
+      <Dependent Role="Secenekler">
+        <PropertyRef Name="Soru_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Yanit_Secenek">
+    <End Role="Secenekler" Type="AnketModel.Store.Secenekler" Multiplicity="0..1" />
+    <End Role="Yanitlar" Type="AnketModel.Store.Yanitlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Secenekler">
+        <PropertyRef Name="Secenek_ID" />
+      </Principal>
+      <Dependent Role="Yanitlar">
+        <PropertyRef Name="Secenek_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Yanit_Soru">
+    <End Role="Sorular" Type="AnketModel.Store.Sorular" Multiplicity="0..1" />
+    <End Role="Yanitlar" Type="AnketModel.Store.Yanitlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sorular">
+        <PropertyRef Name="Soru_ID" />
+      </Principal>
+      <Dependent Role="Yanitlar">
+        <PropertyRef Name="Soru_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
